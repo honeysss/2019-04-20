@@ -1,0 +1,84 @@
+.container {
+  position: fixed;
+  bottom: 50px;
+  right: 10%;
+}
+.toolbar,
+.icon {
+  background-image: url('../img/toolbar.png');
+  background-repeat: no-repeat;
+  display: block;
+}
+.toolbar {
+  margin-bottom: 2px;
+  width: 52px;
+  height: 52px;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: background-position 1s;
+  -moz-transition: background-position 1s;
+  -ms-transition: background-position 1s;
+  -o-transition: background-position 1s;
+  transition: background-position 1s;
+}
+.toolbar:hover .icon {
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  opacity: 1;
+}
+.toolbar-one {
+  background-position: 0 -798px;
+}
+.toolbar-one:hover {
+  background-position: 0 -860px;
+}
+.toolbar-one .icon-one {
+  background-position: 6px -2px;
+}
+.toolbar-two {
+  background-position: 0 -426px;
+}
+.toolbar-two:hover {
+  background-position: 0 -488px;
+}
+.toolbar-three {
+  background-position: 0 -550px;
+}
+.toolbar-three:hover {
+  background-position: 0 -612px;
+}
+.toolbar-three .icon-two {
+  background-position: 6px -226px;
+}
+.toolbar-four {
+  background-position: 0 -674px;
+}
+.toolbar-four:hover {
+  background-position: 0 -736px;
+}
+.icon {
+  position: absolute;
+  width: 160px;
+  height: 180px;
+  right: 56px;
+  bottom: 0;
+  opacity: 0;
+  -webkit-transition: right bottom;
+  -moz-transition: right bottom;
+  -ms-transition: right bottom;
+  -o-transition: right bottom;
+  transition: right bottom;
+  -webkit-transition: scale(0.01);
+  -moz-transition: scale(0.01);
+  -ms-transition: scale(0.01);
+  -o-transition: scale(0.01);
+  transition: scale(0.01);
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}

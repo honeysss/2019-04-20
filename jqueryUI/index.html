@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<!-- 可以为网页添加一个小图标 -->
+	<link rel="Shortcut Icon" href="img/1.jpg" />
+	<link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css" />
+	<title>jqueryUI</title>
+	<style>
+		#dragging {
+			width: 100px;
+			height: 100px;
+			text-align: center;
+			border: 1px solid red;
+		}
+		#container {
+			width: 500px;
+			height: 300px;
+			border: 1px solid red;
+		}
+		.angle {
+			width: 0;
+			height: 0;
+			border-width: 10px;
+			border-style: solid;
+			border-color: transparent red transparent transparent;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="container">
+		<div id="dragging">
+			<p class="handle">在这里拖动我</p>
+			<p class="cancel">这里不可以拖动</p>
+		</div>
+	</div>
+
+	<button>这是一个按钮</button>
+	<input type="submit" value="这是一个提交input" />
+	<a href="#">这是一个a标签</a>
+
+	<div class="angle"></div>
+
+
+	<script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+	<script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			init();
+		})
+
+		function init () {
+
+			$('input[type=submit], button, a').button();
+
+			// 这等于是自定义了一个事件 事件里有默认值 如果没有传参，就全部按默认值 插件形式
+			// 里面的参数都是opts 实例化该事件
+			$('#dragging').draggable({
+				// 只能在y轴移动
+				// axis: 'y',
+				// 只能在#container中移动
+				// containment: '#container',
+				
+				// 只能在父元素中移动
+				containment: 'parent',
+
+				// 鼠标样式和位置
+				cursor: 'pointer',
+				// cursorAt: {
+				// 	top: 10,
+				// 	left: 10
+				// },
+
+				// 延迟距离和延迟事件
+				// distance: 40,
+				// delay: 1000
+				
+				// 在某个dom上生效
+				// handle: '.handle',
+				// cancel: '.cancel'
+				
+				// 是否还原
+				// revert: true,
+				// 把内容拉取出来
+				// helper: 'clone'
+				
+				// 对齐到20*20的格子
+				grid: [20, 20],
+				// helper: function() {
+				// 	return $( "<div class='ui-widget-header'>I'm a custom helper</div>" );
+				// }
+			});
+		}
+	</script>
+</body>
+</html>

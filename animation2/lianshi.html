@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lianshi</title>
+	<style>
+		#box {
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+
+	<script>
+		window.onload = function () {
+			var obj = document.getElementById('box');
+			obj.onmouseover = function() {
+				var _this = this;
+				startMove(_this, 'width', 400, function() {
+					startMove(_this, 'height', 400, function() {
+						startMove(_this, 'opacity', 30);
+					})
+				})
+			}
+
+			// 第二个回调函数不能直接写this 因为这个时候this指向的是window 要先把obj的this用一个变量保存下来
+			obj.onmouseout = function() {
+				var _this = this;
+				// 如果鼠标移开的时候还没执行到改变透明度的函数
+				// 先从改变透明度开始 因为目标值和现在的值相同 所以直接结束了第一个函数
+				// 以此类推
+				startMove(_this, 'opacity', 100, function() {
+					startMove(_this, 'height', 200, function() {
+						startMove(_this, 'width', 200);
+					})
+				})
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+	
+	<script src="js/move.js"></script>
+</body>
+</html>

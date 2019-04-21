@@ -1,0 +1,17 @@
+<!--头像test-->
+<div class="head">
+    <img src="" id="showImg" >
+    <input type="file" class="file" name="imgfile" id="imgfile" placeholder="请选择文件" accept="image/png,image/gif" />
+</div>
+
+ $(function () {
+        $("#imgfile").change(function(){
+            var v = $(this).val();
+            var reader = new FileReader();
+            reader.readAsDataURL(this.files[0]);
+            reader.onload = function(e){
+                console.log(e.target.result);
+                $("#showImg").attr("src",e.target.result);
+            };
+        });
+    })

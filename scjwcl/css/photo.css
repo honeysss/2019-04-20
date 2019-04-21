@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    position: absolute;
+    width:100%;
+    height:100%;
+}
+.photoDiv{
+    width:50%;
+    height:72%;
+    margin: 150px auto;
+    position: relative;
+}
+.photoUl{
+    width:100%;
+    height:100%;
+    position: relative;
+}
+.phptoLi{
+    position: absolute;
+    left: 0;
+    top:0;
+    width:100%;
+    height:100%;
+}
+.phptoImg{
+    width:100%;
+    height:100%;
+}
+.prev,
+.next{
+    display: inline-block;
+    width:60px;
+    height:60px;
+    position: absolute;
+    background: url("../img/箭头前.png") no-repeat;
+    cursor: pointer;
+    z-index: 100;
+}
+.prev:hover ,
+.next:hover{
+    background: url("../img/箭头后.png") no-repeat;
+}
+.prev{
+    top:45%;
+    left: -108px;
+    transform: rotate(180deg);
+}
+.next{
+    top:45%;
+    right: 18px;
+}

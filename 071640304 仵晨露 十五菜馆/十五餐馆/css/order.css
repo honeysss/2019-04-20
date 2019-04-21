@@ -1,0 +1,624 @@
+#body{
+    background-color: #F5F5F5;
+    font-size: 16px;
+    z-index: 0;
+}
+
+.content{
+    width:1075px;
+    height:auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right:0;
+    margin:auto;
+    margin-top: 50px;
+}
+
+/*上侧*/
+.confirm-buy{
+    color: #444444;;
+
+}
+.confirm-buy a{
+    color: #444444;
+    margin: 0 10px;
+}
+.confirm-buy a:hover{
+    color: #444444;
+}
+.confirm-buy hr{
+    width:3px;
+    height:18px;
+    background-color: #444444;
+    border: none;
+    float: left;
+    margin-top: 3px;
+}
+.confirm-buy span{
+    font-weight: bold;
+}
+
+
+/*左侧*/
+
+.left-content{
+    width:37%;
+    height:auto;
+    background-color: white;
+    border: 1px solid #F5F5F5;
+    position: absolute;
+    top: 45px;
+    left:0;
+    box-shadow: 0 3px 2px #ccc;
+    color: #434343;
+    padding:0 20px;
+}
+.ordered-img{
+    display: none;
+}
+.left-content div{
+    width:100%;
+    height:60px;
+    border-bottom: 1px dashed #a0a0a0;
+    line-height: 60px;
+
+}
+.left-content-p1{
+    float: left;
+}
+.left-content-p2{
+    float: right;
+}
+.foodName1,
+.price-num,
+.last-price-icon,
+.total{
+    font-weight: bold;
+}
+.left-four{
+    border-bottom: none !important;
+}
+
+
+/*添加地址*/
+.addAddress{
+    width: 470px;
+    height:310px;
+    border:1px solid #DDDDDD;
+    position: absolute;
+    /*top:130%;*/
+    /*left:50%;*/
+    z-index: 5;
+    background-color: white;
+    /*margin-left:-235px;*/
+    padding-bottom: 20px;
+    display: none;
+}
+
+/*右侧*/
+.right-content{
+    background-color: white;
+    border: 1px solid #F5F5F5;
+    width:50%;
+    float: left;
+    position: absolute;
+    top: 45px;
+    right:0;
+    padding:20px 20px;
+
+}
+
+/*选择地址*/
+.choose-add{
+    width:100%;
+    height: 70px;
+    background-color: #FAFAFA;
+    border:1px solid #DDDDDD;
+    line-height: 70px;
+    margin:10px 0 30px 0;
+    text-align: center;
+    cursor: pointer;
+    color: #B8B8B8;
+}
+.choose-add img{
+    width:20px;
+    height: 20px;
+    vertical-align: -5px;
+}
+.choose-add:hover{
+    border:1px solid red;
+}
+.chosen-add:hover{
+    border:1px solid red;
+}
+.chosen-add .order-page-addr{
+    color: black;
+    margin-top: 5px;
+}
+
+/*选择完地址的框*/
+.chosen-add{
+    width:75%;
+    height: 60px;
+    background-color: white;
+    border:1px solid #DDDDDD;
+    margin:10px 0 30px 0;
+    cursor: pointer;
+    color: #B8B8B8;
+    padding-left: 25%;
+    position: relative;
+    display: none;
+}
+.chosen-add .ul-add{
+    color: black;
+    margin-top: 7px;
+}
+.de-address{
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    left:30px;
+    color: #A0A0A0;
+}
+
+
+
+
+
+.add-address{
+    width:100%;
+    height: 100px;
+    background-color: #FAFAFA;
+    border:1px solid #DDDDDD;
+    line-height: 100px;
+    margin:10px 0 30px 0;
+    text-align: center;
+    cursor: pointer;
+    color: #B8B8B8;
+    display: none;
+}
+.add-address:hover{
+    border:1px solid red;
+}
+.add-address img{
+    width:20px;
+    height: 20px;
+    vertical-align: -5px;
+
+}
+.right-content form{
+    width:100%;
+    height:auto;
+    font-size: 12px !important;
+    margin-bottom: 30px;
+}
+.right-content form label{
+    padding-top: 7px;
+    float: left;
+}
+.right-content form input{
+    width:87.3%;
+    height:30px;
+    line-height: 30px;
+    margin-left:30px;
+    border: 1px solid #DDDDDD;
+    box-shadow: 0 0 5px #DDDDDD;
+    text-indent: 4px;
+}
+.right-content form input::placeholder{
+    color: #a0a0a0;
+}
+.se-time{
+    width:100%;
+    margin-bottom: 30px;
+    position: relative;
+}
+.se-time-p{
+    padding-top: 7px;
+    float: left;
+    font-size: 12px !important;
+    float: left;
+}
+.se-time select{
+    width:25%;
+    height:30px;
+    line-height:30px;
+    background-color: white;
+    border:1px solid #DDDDDD;
+    margin-left: 14px;
+    text-indent:2px;
+    /*//隐藏select的下拉图标*/
+    /*appearance: none;*/
+    /*-webkit-appearance: none;*/
+    /*-moz-appearance: none;*/
+}
+.pay-method-div{
+    width:100%;
+    margin-bottom:30px;
+}
+.pay-method-div p{
+    padding-top: 5px;
+    float: left;
+    font-size: 12px !important;
+    float: left;
+    margin-right: 10px;
+}
+.pay-method-div li{
+    float: left;
+    width:18%;
+    height:25px;
+    line-height: 25px;
+    border:1px solid #CCCCCC;
+    text-align: center;
+    margin-right: 14px;
+    cursor: pointer;
+    font-size: 14px !important;
+    border-radius: 12px;
+}
+.pay-method-div ul{
+    width:350px;
+    height:27px;
+}
+.active-pay{
+    color: #FFA627;
+    border:1px solid #FFA627 !important;
+    font-weight: bold;
+}
+.last-line p{
+    padding-top: 5px;
+    float: left;
+    font-size: 12px !important;
+    float: left;
+    margin-right: 10px;
+    font-weight: bold;
+}
+.last-line-icon,
+.last-line-num{
+    font-size: 20px !important;
+    color: #FFA627; !important;
+}
+.last-line a{
+    float: right;
+    margin-top: 2px;
+    background-color: #FFA627;
+    width:90px;
+    height:30px;
+    text-align: center;
+    line-height:30px;
+    margin-right: -1px;
+    display: block;
+    cursor: pointer;
+}
+
+/*购买成功*/
+.orderSu{
+    width:300px;
+    height:100px;
+    background-color: white;
+    position: absolute;
+    top: 200px;
+    left:590px;
+    border:1px solid #E5E5E5;
+    padding:20px 20px;
+    display: none;
+    z-index: 10;
+}
+.orderSu img{
+    width:20px;
+    height:20px;
+    vertical-align: -5px;
+    margin-right: 5px;
+}
+.orderSu p{
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.orderSu ul{
+    margin-left: 37px;
+}
+.orderSu li{
+    float: left;
+}
+.orderSu a,
+.back-mainPage{
+    background-color: lavender;
+    color: #FFA627 !important;
+    text-align: center;
+    line-height:30px;
+    margin-right:30px;
+    font-size: 15px !important;
+    width:100px;
+    height:30px;
+    display: block;
+}
+.orderSu li a:hover,
+.back-mainPage:hover{
+    background-color: #FFA627;
+    color: white !important;
+    border:none;
+
+}
+.back-mainPage{
+    margin: 20px  auto 20px auto;
+    width: 130px !important;
+    height:50px !important;
+    line-height: 50px !important;
+    font-size: 20px !important;
+
+}
+
+/*添加地址*/
+.addAddress-div{
+    width:100%;
+    height:40px;
+    color: #666C74;
+    font-weight: bold;
+    line-height: 40px;
+    background-color: #F8F8F8;
+    cursor: pointer;
+
+}
+
+.no-address1{
+    text-align: center;
+    margin-top: -50px;
+    margin-bottom: 30px;
+}
+.addAddress-p1{
+    float: left;
+    padding-left: 10px;
+}
+.dismiss-add{
+    float: right;
+    font-size: 30px !important;
+    opacity: 0.8;
+    padding-right: 10px;
+    cursor: pointer;
+}
+.addAddress-form{
+    width:80%;
+    padding:20px 10%;
+}
+.addAddress-form label{
+    font-size: 14px !important;
+}
+.add-name,
+.tel,
+.address{
+    width:271px;
+    height:30px;
+    font-size: 14px !important;
+    text-indent: 4px;
+    border: 1px solid #DDDDDD;
+    box-shadow: 0 0 1px #dddddd;
+    margin-bottom: 20px;
+    margin-left:39px;
+
+}
+.addAddress-form input::placeholder{
+    color: #DDDDDD;
+}
+.man{
+    margin-bottom: 20px;
+    margin-right: 5px;
+    margin-left:40px;
+}
+.woman-span{
+    margin-bottom: 20px;
+    margin-right: 185px;
+    margin-left: 5px;
+}
+.woman{
+    margin-left: 20px;
+}
+.save,
+.cancel{
+    width:100px;
+    height:30px;
+    line-height:30px;
+    border-radius: 5px;
+    font-size: 16px !important;
+    cursor: pointer;
+}
+.save{
+    margin-left: 124px;
+    margin-right: 30px;
+    float: left;
+    color: black !important;
+    background-color: #FFA627;
+    border:none !important;
+}
+.cancel{
+    color: white !important;
+    background-color: #a0a0a0;
+    border:none !important;
+}
+.info{
+    color: red;
+    margin-right: 3px;
+}
+.info-war{
+    color: red;
+    font-size: 12px !important;
+    margin-left: 66px;
+    display: none;
+}
+
+/*修改地址*/
+.editAddress ,
+.edit1{
+    width: 470px;
+    height:310px;
+    border:1px solid #DDDDDD;
+    position: fixed;
+    top:20%;
+    left:50%;
+    z-index: 5;
+    background-color: white;
+    margin-left:-235px;
+    padding-bottom: 20px;
+    display: none;
+}
+.edit1{
+    z-index:15 !important;
+}
+.editAddress-div{
+    width:100%;
+    height:40px;
+    color: #666C74;
+    font-weight: bold;
+    line-height: 40px;
+    background-color: #F8F8F8;
+
+}
+.editAddress-p1{
+    float: left;
+    padding-left: 10px;
+}
+.editAddress-form{
+    width:73%;
+    padding:20px 10%;
+}
+.editAddress-form label{
+    font-size: 14px !important;
+    margin-right: 10px;
+}
+.edit-name,
+.edit-tel,
+.edit-address{
+    width:271px;
+    height:30px;
+    font-size: 14px !important;
+    text-indent: 4px;
+    border: 1px solid #DDDDDD;
+    box-shadow: 0 0 1px #dddddd;
+    margin-bottom: 20px;
+
+}
+.editAddress-form input::placeholder{
+    color: #DDDDDD;
+}
+.edit-man{
+    margin-bottom: 20px;
+    margin-right: 5px;
+}
+.edit-woman-span{
+    margin-bottom: 20px;
+    margin-right: 172px;
+    margin-left: 5px;
+}
+.edit-woman{
+    margin-left: 20px;
+}
+.edit-save,
+.cancel{
+    width:100px;
+    height:30px;
+    line-height:30px;
+    border-radius: 5px;
+    font-size: 16px !important;
+    cursor: pointer;
+}
+.edit-save{
+    margin-left: 124px;
+    margin-right: 30px;
+    float: left;
+    color: black !important;
+    background-color: #FFA627;
+    border:none !important;
+}
+
+
+
+/*选择地址的框*/
+.choose-address{
+    width:350px;
+    height:auto;
+    border: 1px solid #F5F5F5;
+    background-color: white;
+    position: absolute;
+    top:150%;
+    left: 37%;
+    padding:20px 20px 0 20px;
+    display: none;
+    z-index: 10;
+}
+.choose-address .dismiss-add{
+    margin-top: -5px;
+}
+.choose-address ul img{
+    width:25px;
+    height:25px;
+    position: relative;
+    right: -282px !important;
+    top:-56px;
+    cursor: pointer;
+}
+.choose-address .delete-icon{
+    margin-right: 9px;
+}
+.choose-address1{
+    position: relative;
+    right: -121px;
+    width:30%;
+    height:20px;
+    line-height:20px;
+    cursor: pointer;
+    top:4px;
+    margin-bottom: 77px;
+}
+.order-userName,
+.order-userName1{
+    display: none;
+}
+.choose-address1 img{
+    width:20px;
+    height:20px;
+    vertical-align: -5px;
+    float: right;
+    margin-right: 10px;
+}
+.choose-address1 p{
+    color: #FFA627;
+    float: right;
+}
+.choose-address ul{
+    width:100%;
+    height:auto;
+    margin-top: 39px;
+}
+.choose-address ul li{
+    width:95%;
+    height:auto;
+    padding:20px 0 20px 20px;
+    border-bottom: 1px solid #F5F5F5;
+    cursor: pointer;
+    border-radius: 30px;
+    margin-top: -68px;
+}
+
+
+
+/*头像*/
+.head{
+    width:150px;
+    height:100px;
+    background-color: white;
+    z-index: 100;
+    position: fixed;
+    top:30%;
+    left:40%;
+}
+.head img{
+    width:200px;
+    height:200px;
+}
+
+.ordered-orderId,
+.session-userName{
+    display: none;
+}

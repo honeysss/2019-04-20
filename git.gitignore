@@ -1,0 +1,4 @@
+# 这里是让git忽略的文件
+node_modules
+bower_components
+.idea

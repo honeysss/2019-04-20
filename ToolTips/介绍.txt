@@ -1,0 +1,13 @@
+通过css3 transform的属性
+
+
+移动位置:translate3d
+旋转角度:rotate3d
+缩放:scale3d
+	transform: translate3d(0, 0, 0) rotate3d(1, 1, 1, 0) scale3d(1, 1, 1);
+
+
+
+如果想对属性添加一些动画 需要用到
+transition属性
+	transition: opacity 0.3s, transform 0.3s;

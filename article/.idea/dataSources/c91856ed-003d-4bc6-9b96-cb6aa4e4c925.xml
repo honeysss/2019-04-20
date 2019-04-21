@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="fifteenRestaurant@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
+    <root id="1"/>
+    <schema id="2" parent="1" name="fifteenrestaurant">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="article"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="phpmyadmin"/>
+    <schema id="8" parent="1" name="school"/>
+    <table id="9" parent="2" name="comments"/>
+    <table id="10" parent="2" name="food"/>
+    <table id="11" parent="2" name="orderinfo"/>
+    <table id="12" parent="2" name="orderr"/>
+    <table id="13" parent="2" name="upordown"/>
+    <table id="14" parent="2" name="userinfo"/>
+    <table id="15" parent="2" name="userr"/>
+    <column id="16" parent="9" name="userName">
+      <Position>1</Position>
+      <Comment>注册时候的名字（用户名）
+</Comment>
+      <DataType>char(10)|0</DataType>
+    </column>
+    <column id="17" parent="9" name="orderId">
+      <Position>2</Position>
+      <Comment>订单编号</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="18" parent="9" name="coDate">
+      <Position>3</Position>
+      <Comment>评论日期</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="19" parent="9" name="comments">
+      <Position>4</Position>
+      <Comment>评论</Comment>
+      <DataType>varchar(100)|0</DataType>
+      <DefaultExpression>&apos;该用户很懒，什么都没有留下...&apos;</DefaultExpression>
+    </column>
+    <column id="20" parent="9" name="coState">
+      <Position>5</Position>
+      <Comment>评论状态（好评 中评 差评)</Comment>
+      <DataType>char(10)|0</DataType>
+      <DefaultExpression>&apos;好评&apos;</DefaultExpression>
+    </column>
+    <column id="21" parent="9" name="headImg">
+      <Position>6</Position>
+      <DataType>blob|0</DataType>
+    </column>
+    <column id="22" parent="9" name="starImg">
+      <Position>7</Position>
+      <DataType>blob|0</DataType>
+    </column>
+    <column id="23" parent="10" name="foodId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="24" parent="10" name="foodName">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="25" parent="10" name="price">
+      <Position>3</Position>
+      <DataType>float(10,2)|0</DataType>
+    </column>
+    <column id="26" parent="10" name="sellNum">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="27" parent="10" name="goodNum">
+      <Position>5</Position>
+      <DataType>int(5)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="28" parent="10" name="upNum">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="29" parent="10" name="downNum">
+      <Position>7</Position>
+      <Comment>差评个数</Comment>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="30" parent="10" name="upRate">
+      <Position>8</Position>
+      <Comment>好评率 默认为100% 针对某一菜品 好评率(取整) = 顾客对该菜品的好评个数（点赞个数)/该菜品的销量*100%</Comment>
+      <DataType>int(5)|0</DataType>
+      <DefaultExpression>&apos;100&apos;</DefaultExpression>
+    </column>
+    <column id="31" parent="10" name="img">
+      <Position>9</Position>
+      <DataType>blob|0</DataType>
+    </column>
+    <column id="32" parent="10" name="attr">
+      <Position>10</Position>
+      <DataType>char(10)|0</DataType>
+    </column>
+    <key id="33" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>foodId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="34" parent="11" name="orderId">
+      <Position>1</Position>
+      <Comment>订单编号</Comment>
+      <DataType>int(6)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="35" parent="11" name="userName">
+      <Position>2</Position>
+      <Comment>注册时的姓名</Comment>
+      <DataType>char(10)|0</DataType>
+    </column>
+    <column id="36" parent="11" name="loginName">
+      <Position>3</Position>
+      <Comment>收餐人的姓名</Comment>
+      <DataType>char(10)|0</DataType>
+    </column>
+    <column id="37" parent="11" name="buyTime">
+      <Position>4</Position>
+      <Comment>订单时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="38" parent="11" name="arriveTime">
+      <Position>5</Position>
+      <DataType>char(40)|0</DataType>
+    </column>
+    <column id="39" parent="11" name="remark">
+      <Position>6</Position>
+      <Comment>备注信息</Comment>
+      <DataType>char(50)|0</DataType>
+    </column>
+    <column id="40" parent="11" name="totalPrice">
+      <Position>7</Position>
+      <Comment>总价</Comment>
+      <DataType>float(10,2)|0</DataType>
+    </column>
+    <column id="41" parent="11" name="rePrice">
+      <Position>8</Position>
+      <Comment>优惠价</Comment>
+      <DataType>int(3)|0</DataType>
+    </column>
+    <column id="42" parent="11" name="payPrice">
+      <Position>9</Position>
+      <Comment>实际价钱</Comment>
+      <DataType>float(10,2)|0</DataType>
+    </column>
+    <column id="43" parent="11" name="state">
+      <Position>10</Position>
+      <Comment>送餐状态，0 订餐已取消 1 订餐正在派送中 2 订餐已送达 3 已评论  4 已删除
+默认正在派送中</Comment>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <column id="44" parent="11" name="payMethod">
+      <Position>11</Position>
+      <Comment>支付方式</Comment>
+      <DataType>char(10)|0</DataType>
+    </column>
+    <column id="45" parent="11" name="gender">
+      <Position>12</Position>
+      <DataType>char(2)|0</DataType>
+    </column>
+    <column id="46" parent="11" name="tel">
+      <Position>13</Position>
+      <DataType>char(11)|0</DataType>
+    </column>
+    <column id="47" parent="11" name="addr">
+      <Position>14</Position>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <key id="48" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>orderId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="49" parent="12" name="orderId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;110295&apos;</DefaultExpression>
+    </column>
+    <column id="50" parent="12" name="foodName">
+      <Position>2</Position>
+      <Comment>菜品名称</Comment>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="51" parent="12" name="orderNum">
+      <Position>3</Position>
+      <Comment>订餐数量</Comment>
+      <DataType>int(3)|0</DataType>
+    </column>
+    <column id="52" parent="12" name="perPrice">
+      <Position>4</Position>
+      <DataType>double|0</DataType>
+    </column>
+    <column id="53" parent="12" name="img">
+      <Position>5</Position>
+      <DataType>blob|0</DataType>
+    </column>
+    <column id="54" parent="13" name="orderId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="55" parent="13" name="upFood">
+      <Position>2</Position>
+      <DataType>char(20)|0</DataType>
+    </column>
+    <column id="56" parent="13" name="downFood">
+      <Position>3</Position>
+      <DataType>char(20)|0</DataType>
+    </column>
+    <column id="57" parent="14" name="userinfoId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="58" parent="14" name="userName">
+      <Position>2</Position>
+      <Comment>注册时的用户名</Comment>
+      <DataType>char(10)|0</DataType>
+    </column>
+    <column id="59" parent="14" name="loginName">
+      <Position>3</Position>
+      <Comment>添加地址时候收餐人的名字</Comment>
+      <DataType>char(10)|0</DataType>
+    </column>
+    <column id="60" parent="14" name="gender">
+      <Position>4</Position>
+      <DataType>char(2)|0</DataType>
+    </column>
+    <column id="61" parent="14" name="tel">
+      <Position>5</Position>
+      <DataType>char(11)|0</DataType>
+    </column>
+    <column id="62" parent="14" name="addr">
+      <Position>6</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <key id="63" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>userinfoId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="64" parent="15" name="userName">
+      <Position>1</Position>
+      <Comment>用户名</Comment>
+      <DataType>char(10)|0</DataType>
+    </column>
+    <column id="65" parent="15" name="psw">
+      <Position>2</Position>
+      <Comment>密码</Comment>
+      <DataType>char(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="66" parent="15" name="img">
+      <Position>3</Position>
+      <DataType>blob|0</DataType>
+    </column>
+  </database-model>
+</dataSource>

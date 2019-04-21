@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+    <title>vueEnd</title>
+    <style>
+
+        nav{
+            display:inline-block;
+            margin:60px auto 45px;
+            background-color:#5597b4;
+            box-shadow:0 1px 1px #ccc;
+            border-radius:2px;
+        }
+
+        nav a{
+            display:inline-block;
+            padding: 18px 30px;
+            color:#fff !important;
+            font-weight:bold;
+            font-size:16px;
+            text-decoration:none !important;
+            line-height:1;
+            text-transform: uppercase;
+            background-color:transparent;
+
+            -webkit-transition:background-color 0.25s;
+            -moz-transition:background-color 0.25s;
+            transition:background-color 0.25s;
+            cursor: pointer;
+        }
+
+        nav a:first-child{
+            border-radius:2px 0 0 2px;
+        }
+
+        nav a:last-child{
+            border-radius:0 2px 2px 0;
+        }
+
+        nav.home .home,
+        nav.product .product,
+        nav.service .service,
+        nav.contact .contact{
+            background-color:#e35885;
+        }
+
+        nav a:first-child{
+                 border-radius:2px 0 0 2px;
+             }
+
+        nav a:last-child{
+            border-radius:0 2px 2px 0;
+        }
+        p{
+             font-size:22px;
+             font-weight:bold;
+             color:#7d9098;
+            margin-left: 150px;
+         }
+
+        p b{
+            color:#ffffff;
+            display:inline-block;
+            padding:5px 10px;
+            background-color:#c4d7e0;
+            border-radius:2px;
+            text-transform:uppercase;
+            font-size:18px;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+    <nav :class="active" @click.prevent>
+        <a class="home" @click="activeClass('home')" :title="active">{{home}}</a>
+        <a class="product" @click="activeClass('product')">{{product}}</a>
+        <a class="service" @click="activeClass('service')">{{service}}</a>
+        <a class="contact" @click="activeClass('contact')">{{contact}}</a>
+    </nav>
+    <p>您选择的是:<b>{{active}}菜单</b></p>
+</div>
+
+<script>
+    window.onload = function () {
+        var vue = new Vue({
+            el : " #root",
+            data : {
+                home : 'home',
+                product : 'product',
+                service : 'service',
+                contact : 'contact',
+                active : 'home'
+            },
+            methods : {
+                activeClass(item){
+                    this.active = item;
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>

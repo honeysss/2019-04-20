@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>toBig</title>
+	<style>
+		body {
+				background-color: #383639;
+		}
+		#myCanvas {
+			display: block;
+			margin: 100px auto;
+			margin-bottom: 40px;
+		}
+		#range {
+			display: block;
+			width: 400px;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="myCanvas" width="800px" height="400px"></canvas>
+	<canvas id="bgCanvas" style="display: none;"></canvas>
+
+	<script>
+		var canvas = document.getElementById('myCanvas');
+		var ctx = canvas.getContext('2d');
+		var girlPic = new Image();
+		var isMousedown = false;
+		var scaleX;
+		var scaleY;
+		var i, r, g, b, a, color;
+
+		var bgCanvas = document.getElementById('bgCanvas');
+		var bgCtx = bgCanvas.getContext('2d');
+
+		window.onload = function () {
+
+			girlPic.src = './img/girl.jpg';
+			// 图片加载完毕后画图片
+			girlPic.onload = function () {
+
+				bgCanvas.width  = girlPic.width;
+				bgCanvas.height = girlPic.height;
+
+				scaleX = bgCanvas.width / canvas.width;
+				scaleY = bgCanvas.height / canvas.height;
+
+				// 这个的意思是 从画布的 0 0 开始，在画布的宽高范围绘制该图片，如果该图片比画布的尺寸大，就是缩小绘制，反之是放大绘制
+				// 女孩图片是1200*600像素 比画布的尺寸大 所以是缩小绘制
+				ctx.drawImage(girlPic, 0, 0, canvas.width, canvas.height);
+
+				bgCtx.drawImage(girlPic, 0, 0);
+			}
+		}
+
+		// 鼠标点击
+		canvas.onmousedown = function (e) {
+			isMousedown = true;
+			e.preventDefault();
+			var winX = e.pageX;
+			var winY = e.pageY;
+			var point = windowTocanvas(winX, winY);
+
+			// 获得点击时候的颜色
+			var pixelData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+			// 获得是第一个像素点 point.y * canvas.width + point.x 再 -1
+			// 因为像素的存放是从左到右 从上到下
+			i = parseInt((point.y * canvas.width + point.x) - 1);
+			r = pixelData[4*i+0];
+			g = pixelData[4*i+1];
+			b = pixelData[4*i+2];
+			a = pixelData[4*i+3];
+			color = 'rgb(' + r + ',' + g + ',' + b + ',' + a + ')';
+
+			// 开始时绘制
+			drawMagnifier(point, color);
+		}
+
+		canvas.onmousemove = function (e) {
+			e.preventDefault();
+			if (isMousedown) {
+				var winX = e.pageX;
+				var winY = e.pageY;
+				var point = windowTocanvas(winX, winY);
+
+				var pixelData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+				i = parseInt((point.y * canvas.width + point.x) - 1);
+				r = pixelData[4*i+0];
+				g = pixelData[4*i+1];
+				a = pixelData[4*i+3];
+				color = 'rgb(' + r + ',' + g + ',' + b + ',' + a  + ')';
+
+				// 每次移动的时候绘制
+				drawMagnifier(point, color);
+			}
+		}
+
+		canvas.onmouseup = function (e) {
+			e.preventDefault();
+			isMousedown = false;
+			drawMagnifier();
+		}
+
+		canvas.onmouseout = function (e) {
+			e.preventDefault();
+			isMousedown = false;
+			drawMagnifier();
+		}
+
+		// 画放大镜
+		function drawMagnifier (point, color) {
+			// 先清除之前的画布
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			// 再重新绘制画布
+			ctx.drawImage(girlPic, 0, 0, canvas.width, canvas.height);
+			// 如果为真 再在画布上绘制放大镜效果
+			if (isMousedown) {
+
+				// 获取大图的圆心坐标
+				var bgCenter_x = point.x * scaleX;
+				var bgCenter_y = point.y * scaleY;
+
+				// 定义半径
+				var mr = 80;
+
+				// 获取大图开始绘制的坐标
+				var bgBeginX = bgCenter_x - mr;
+				var bgBeginY = bgCenter_y - mr;
+
+				// 获取应该映射到画布上的坐标
+				var canvasX = point.x - mr;
+				var canvasY = point.y - mr;
+
+				// 绘制
+				ctx.save();
+				ctx.lineWidth = 10;
+				ctx.strokeStyle = color;
+				ctx.beginPath();
+				ctx.arc(point.x, point.y, mr, 0, Math.PI * 2);
+				ctx.stroke();
+				// 把上面绘制的圆作为一个剪辑区域 在此之后绘制的东西在这个圆之内的范围才可见
+				ctx.clip();
+				ctx.drawImage(bgCanvas, bgBeginX, bgBeginY, 2*mr, 2*mr, canvasX, canvasY, 2*mr, 2*mr);
+				ctx.restore();
+			}
+		}
+
+		function windowTocanvas (winX, winY) {
+			var dis = canvas.getBoundingClientRect();
+			return {
+				x: winX - dis.left,
+				y: winY - dis.top
+			}
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue</title>
+</head>
+<body>
+<div id="root">
+
+    <div id="box">
+        <input @click="get()" type="button" value="点击我(get)方法">
+    </div>
+
+</div>
+
+<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+<script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+<script>
+    window.onload = function () {
+
+        var dom = {'sex' : "男", "name" : "狗成杰"};
+        var vue = new Vue({
+            el : "#root",
+            data : {
+                dom : dom
+            },
+            methods : {
+                get (){
+                    this.$http.get('vuePhp.php',).then(function(res){
+                        console.log(res.body);
+                    },function(res){
+                        console.log(res.status);
+                    });
+                },
+                post(){
+                    this.$http.post('vuePhp.php', {
+                        name : '师成杰',
+                        attr : 'pig',
+                        smart : 'silly'
+                    }, {emulateJSON : true}).then(function (res) {
+                        document.write(res.body);
+                    },function (res) {
+                        console.log(res.status);
+                    })
+                }
+            }
+        })
+
+
+        Vue.set(dom, 'eat', 'apple');
+        vue.dom.want = 'me';
+        Vue.delete(dom, 'want')
+        console.log(vue.dom);
+
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+
+*{
+    margin: 0;
+    padding:0;
+}
+li{
+    list-style: none;
+}
+#container {
+}
+.color{
+    position: absolute;
+    top:60px;
+    right: 13%;
+}
+.color p,
+.size p{
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+.color ul li {
+    float: left;
+    margin-right: 10px;
+    width:20px;
+    height:20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.color ul li:nth-child(1){
+    background-color: gray;
+}
+.color ul li:nth-child(2){
+    background-color: darkorange;
+}
+.color ul li:nth-child(3){
+    background-color: #ff2023;
+}
+.color ul li:nth-child(4){
+    background-color: #fff926;
+}
+.color ul li:nth-child(5){
+    background-color: #1bff36;
+}
+
+.size{
+    position: absolute;
+    top:100px;
+    margin-top: 20px;
+    right: 15.3%;
+}
+.size ul li{
+    float: left;
+    width:20px;
+    height:20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: -1px -1px 1px pink,2px 2px 2px pink;
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+}
+.size ul li:nth-child(1){
+    font-weight: bold;
+}
+.size ul li:nth-child(2){
+    font-weight: normal;
+}
+.size ul li:nth-child(3){
+    font-weight: lighter;
+}
+.eraser{
+    position: absolute;
+    top:180px;
+    right:18.2%;
+}
+.eraser p {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.eraser ul li{
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid red;
+}
+.eraser ul li:nth-child(1){
+    width:14px;
+    height:14px;
+}
+.eraser ul li:nth-child(2){
+    margin-top: 0.5px;
+    width:12px;
+    height: 12px;
+}
+.eraser ul li:nth-child(3){
+    margin-top: 2px;
+    width:10px;
+    height:10px;
+}
+.clear{
+    width:100px;
+    height:25px;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+    position: absolute;
+    top:235px;
+    right: 16.4%;
+    box-shadow: -1px -1px 1px pink,2px 2px 2px pink;
+    cursor: pointer;
+    display: block;
+}
+.activeColor{
+    width:25px !important;
+    height:25px !important;
+    margin-top: -2.5px;
+}
+.activeSize{
+    width:25px !important;
+    height:25px !important;
+    margin-top: -2.5px;
+    line-height: 25px !important;
+}
+.activeEraser{
+    border: 2px solid red !important;
+    margin-top: -0.5px;
+}

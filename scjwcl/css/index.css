@@ -1,0 +1,373 @@
+
+.load{
+    width:100%;
+    height:100%;
+    position: absolute;
+    background-color: white;
+    top:0;
+    left:0;
+    text-align: center;
+    z-index: 100;
+}
+.loadNum{
+    margin-top: 300px;
+    font-size: 20px;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+.fallHeart img{
+    opacity: 0.6;
+}
+.scj,
+.wcl,
+.heart{
+    position: fixed;
+}
+.p1,
+.p2{
+    width: 1000px;
+    left:50%;
+    margin-left: -500px;
+    position: absolute;
+    height:auto;
+    text-align: center;
+    font-size: 50px;
+    font-family: 方正舒体;
+    font-weight: bold;
+    color: rgba(248, 119, 35, 0.87);
+    text-shadow: 5px 5px 5px #ffa797,-2px -2px 2px #ffb8b9;
+}
+.p1{
+    top: 130px;
+}
+.p2{
+    top: 200px;
+    margin-bottom: 10px;
+}
+.scj,
+.wcl{
+    bottom: 10%;
+    font-size: 14px;
+    font-style: italic;
+    font-family: Ebrima;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #f96711;
+}
+.scj{
+    right: 20%;
+}
+.wcl{
+    right: 16%;
+}
+.heart{
+    bottom: 72px;
+    right: 277px;
+    width:15px;
+    height:15px;
+    opacity: 0.3;
+}
+.together{
+    margin-top: 30px;
+    width:1000px;
+    height:auto;
+    position: absolute;
+    top:260px;
+    font-size: 100px;
+    font-family: 方正舒体;
+    font-weight: bold;
+    color: rgba(248, 91, 176, 0.87);
+    text-shadow: 5px 5px 5px #ffa797,-2px -2px 2px #ffb8b9;
+    text-align: center;
+    left: 50%;
+    margin-left: -500px;
+}
+.togetherDay{
+    width:620px;
+    height:auto;
+    position: absolute;
+    top:400px;
+    font-size: 100px;
+    font-family: 方正舒体;
+    color: rgba(248, 91, 176, 0.87);
+    text-shadow: 5px 5px 5px #ff686e,-2px -2px 2px #ff686e;
+    left: 50%;
+    margin-left: -310px;
+}
+.hour,
+.minute,
+.second{
+    position: absolute;
+}
+.hour{
+    left:74px;
+}
+.minute{
+    left:340px;
+}
+.second{
+    left:619px;
+}
+.img1,
+.img2,
+.img3{
+    width:79%;
+    left: 10%;
+    height:20px;
+    position: absolute;
+    background-image:url('../img/花痴.png');
+    background-size: 20px 20px;
+
+}
+.img1{
+    top:820px;
+}
+
+.first1,
+.first2,
+.first3{
+    width:1000px;
+    height:auto;
+    position: absolute;
+    font-size: 50px;
+    font-family: 方正舒体;
+    font-weight: bold;
+    color: rgba(248, 119, 35, 0.87);
+    text-shadow: 5px 5px 5px #ffa797,-2px -2px 2px #ffb8b9;
+    text-align: center;
+    left: 50%;
+    margin-left: -500px;
+}
+.first1{
+    top:890px;
+}
+.first2{
+    top:960px;
+}
+.first3{
+    top:1030px;
+}
+.together1{
+    margin-top: 30px;
+    width:1000px;
+    height:auto;
+    position: absolute;
+    top:1090px;
+    font-size: 100px;
+    font-family: 方正舒体;
+    font-weight: bold;
+    color: rgba(248, 91, 176, 0.87);
+    text-shadow: 5px 5px 5px #ffa797,-2px -2px 2px #ffb8b9;
+    text-align: center;
+    left: 50%;
+    margin-left: -500px;
+}
+.img2{
+    top:1260px;
+}
+.last1,
+.last2,
+.last3,
+.last4,
+.last5,
+.last6,
+.last7{
+    width:1000px;
+    height:auto;
+    position: absolute;
+    font-size: 50px;
+    font-family: 方正舒体;
+    font-weight: bold;
+    color: rgba(248, 119, 35, 0.87);
+    text-shadow: 5px 5px 5px #ffa797,-2px -2px 2px #ffb8b9;
+    text-align: center;
+    left: 50%;
+    margin-left: -500px;
+}
+.last1{
+     top:1330px;
+ }
+.last2{
+    top:1400px;
+}
+.last3{
+    top:1470px;
+}
+.together2{
+    margin-top: 30px;
+    width:1000px;
+    height:auto;
+    position: absolute;
+    top:1500px;
+    font-size: 100px;
+    font-family: 方正舒体;
+    font-weight: bold;
+    color: rgba(248, 91, 176, 0.87);
+    text-shadow: 5px 5px 5px #ffa797,-2px -2px 2px #ffb8b9;
+    text-align: center;
+    left: 50%;
+    margin-left: -500px;
+}
+.last4{
+    top:1670px;
+}
+.last5{
+    top:1730px;
+}
+.last6{
+    top:1800px;
+}
+.last7{
+    top:1870px;
+}
+
+.img3{
+    top:1970px;
+}
+
+.messageBoard{
+    position: absolute;
+    top:2055px;
+    width:1000px;
+    height:auto;
+    left: 50%;
+    margin-left: -500px;
+}
+textarea{
+    width:100%;
+    height:150px;
+    border: 1px solid #F0F0F0;
+    text-indent: 5px;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #1a1919;
+}
+.expression{
+    width:100%;
+    height:30px;
+    line-height: 30px;
+    background-color: #F0F0F0;
+    border: 1px solid #F0F0F0;
+}
+.expression img{
+    width: 20px;
+    height:20px;
+    vertical-align: -8px;
+    margin-left: 10px;
+    cursor: pointer;
+    padding: 4px;
+}
+.expression img:hover{
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px #ff2484;
+}
+.submit{
+    color: rgba(53, 41, 11, 0.44);
+    font-size: 14px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #F0F0F0;
+    width: 75px;
+    height:30px;
+    line-height: 30px;
+    text-align: center;
+    box-shadow:0 0 1px rgba(255, 85, 31, 0.33);
+}
+.submit:hover{
+    background-color: #ffa7ba;
+    font-weight: bold;
+}
+.messageContent{
+    margin-top: 20px;
+    font-size: 14px;
+    color: rgba(7, 4, 7, 0.81);
+    font-family:华文新魏;
+    font-weight: bold;
+}
+.messageUl{
+    width:100%;
+    height:auto;
+    padding: 10px 0;
+}
+.messageImg{
+    width:30px;
+    height:30px;
+    position: relative;
+    left: 10px;
+    top:20px ;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 1px 1px 1px darkorange;
+}
+.name{
+    position: relative;
+    top: -19px;
+    left:70px;
+}
+.rank{
+    position: relative;
+    top:-33px;
+    left:182px;
+}
+.content{
+    position: relative;
+    top:-25px;
+    left:70px;
+    width: 90%;
+    line-height: 20px;
+    text-align: center;
+    font-size: 18px !important;
+    margin: 10px 0;
+}
+.imgContent{
+    width: 130px;
+    height:130px;
+    position: relative;
+    top:-25px;
+    left:46%;
+    line-height: 20px;
+    text-align: center;
+    font-size: 18px !important;
+    margin: 10px 0;
+}
+.date{
+    position: relative;
+    top:-1px;
+    left:70px;
+    font-size: 12px !important;
+    opacity: 0.8;
+}
+.img4{
+    margin-top: 5px;
+    width:100%;
+    height:20px;
+    position: absolute;
+    background-image:url('../img/蛋糕.png');
+    background-size: 20px 20px;
+    opacity: 0.8;
+}
+.expressionImg{
+    position: absolute;
+    width:94%;
+    height:auto;
+    padding: 3%;
+    background-color: white;
+    box-shadow: 0 0 1px rgba(26, 25, 25, 0.47);
+    z-index: 10;
+    display: none;
+}
+.expressionImg li{
+    display: inline-block;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.expressionImg li img{
+    width:130px;
+    height:130px;
+}
+.expressionImg li img:hover{
+    box-shadow: 0 0 10px #ff3d58;
+}

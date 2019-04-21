@@ -1,0 +1,54 @@
+body {
+  overflow-y: hidden;
+}
+.top {
+  width: 100px;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 30px;
+  margin-left: -50px;
+  color: #8f7a66;
+  text-align: center;
+}
+.top button {
+  width: 100px;
+  height: 30px;
+  line-height: 20px;
+  cursor: pointer;
+  color: white;
+  background-color: #bbada0;
+  margin-bottom: 15px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 3px #bbada0;
+  border-radius: 10px;
+}
+.top button:hover {
+  background-color: #8f7a66;
+}
+.top span {
+  font-family: arial;
+}
+.container {
+  width: 500px;
+  height: 500px;
+  margin: 200px auto;
+  background-color: #9f8b77;
+  position: relative;
+  border-radius: 10px;
+}
+.container .grid {
+  width: 100px;
+  height: 100px;
+  background-color: #bbada0;
+  position: absolute;
+  border-radius: 10px;
+}
+.container .number-cell {
+  position: absolute;
+  text-align: center;
+  line-height: 100px;
+  font-size: 30px;
+  font-weight: bold;
+}

@@ -1,0 +1,90 @@
+create or replace schema if not exists fifteenrestaurant collate latin1_swedish_ci;
+
+create or replace table if not exists comments
+(
+	userName char(10) null comment '注册时候的名字（用户名）
+',
+	orderId int null comment '订单编号',
+	coDate datetime null comment '评论日期',
+	comments varchar(100) default '该用户很懒，什么都没有留下...' null comment '评论',
+	coState char(10) default '好评' null comment '评论状态（好评 中评 差评)',
+	headImg blob null,
+	starImg blob null
+)
+charset=utf8;
+
+create or replace table if not exists food
+(
+	foodId int auto_increment
+		primary key,
+	foodName varchar(10) null,
+	price float(10,2) null,
+	sellNum int default 0 null,
+	goodNum int(5) default 0 null,
+	upNum int default 0 null,
+	downNum int default 0 null comment '差评个数',
+	upRate int(5) default 100 null comment '好评率 默认为100% 针对某一菜品 好评率(取整) = 顾客对该菜品的好评个数（点赞个数)/该菜品的销量*100%',
+	img blob null,
+	attr char(10) null
+)
+charset=utf8;
+
+create or replace table if not exists orderinfo
+(
+	orderId int(6) not null comment '订单编号'
+		primary key,
+	userName char(10) null comment '注册时的姓名',
+	loginName char(10) null comment '收餐人的姓名',
+	buyTime datetime null comment '订单时间',
+	arriveTime char(40) null,
+	remark char(50) null comment '备注信息',
+	totalPrice float(10,2) null comment '总价',
+	rePrice int(3) null comment '优惠价',
+	payPrice float(10,2) null comment '实际价钱',
+	state int default 1 null comment '送餐状态，0 订餐已取消 1 订餐正在派送中 2 订餐已送达 3 已评论  4 已删除
+默认正在派送中',
+	payMethod char(10) null comment '支付方式',
+	gender char(2) null,
+	tel char(11) null,
+	addr varchar(200) null
+)
+charset=utf8;
+
+create or replace table if not exists orderr
+(
+	orderId int null,
+	foodName varchar(10) null comment '菜品名称',
+	orderNum int(3) null comment '订餐数量',
+	perPrice double null,
+	img blob null
+)
+charset=utf8;
+
+create or replace table if not exists upordown
+(
+	orderId int null,
+	upFood char(20) null,
+	downFood char(20) null
+)
+charset=utf8;
+
+create or replace table if not exists userinfo
+(
+	userinfoId int auto_increment
+		primary key,
+	userName char(10) null comment '注册时的用户名',
+	loginName char(10) null comment '添加地址时候收餐人的名字',
+	gender char(2) null,
+	tel char(11) null,
+	addr varchar(50) null
+)
+charset=utf8;
+
+create or replace table if not exists userr
+(
+	userName char(10) null comment '用户名',
+	psw char(10) not null comment '密码',
+	img blob null
+)
+charset=utf8;
+

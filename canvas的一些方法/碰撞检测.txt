@@ -1,0 +1,20 @@
+	x += vx * 0.3;
+	y += vy * 0.3;
+
+	// Åö×²¼ì²â
+	if (x > canvas.width - R) {
+		x = canvas.width - R;
+		vx = -vx;
+	}
+	if (x < R) {
+		x = R;
+		vx = -vx;
+	}
+	if (y < R) {
+		y = R;
+		vy = -vy;
+	}
+	if (y > canvas.height - R) {
+		y = canvas.height - R;
+		vy = -vy;
+	}

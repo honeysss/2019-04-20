@@ -1,0 +1,101 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+
+.window_box {
+	width: 500px;
+	height: 300px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -150px;
+	margin-left: -250px;
+	border: 1px solid red;
+	z-index: 5;
+	text-align: center;
+	line-height: 300px;
+	background-color: #D4BEBE;
+}
+
+.window_skin_a {
+	border-radius: 10px;
+	box-shadow: 0 0 5px #F5A7A7;
+}
+
+.mask {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0.2;
+}
+
+.close {
+	position: absolute;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	font-size: 20px;
+	font-weight: bold;
+	color: red;
+	right: 20px;
+	top: -40%;
+	cursor: pointer;
+	z-index: 5;
+}
+
+.confirm {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	background-color: #F5F5ED;
+	border-radius: 10px;
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	cursor: pointer;
+}
+
+.title {
+	font-size: 30px;
+	color: #F54747;
+	position: absolute;
+	top: -40%;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.confirmBtn, .cancelBtn, .promptConfirm, .promptCancel {
+	position: absolute;
+	bottom: 20px;
+	background-color: #F5F5ED;
+	border-radius: 10px;
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	cursor: pointer;
+}
+.confirmBtn, .promptConfirm {
+	left: 20px;
+}
+
+.cancelBtn, .promptCancel {
+	right: 20px;
+}
+.promptContent {
+	width: 335px;
+	height: 30px;
+	position: absolute;
+	top: 35%;
+	left: 91px;
+}

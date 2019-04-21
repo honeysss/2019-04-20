@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>canvasPlotting</title>
+	<style>
+		#myCanvas {
+			display: block;
+			margin: 20px auto;
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="myCanvas" width="800px" height="600px"></canvas>
+
+	<script src="http://libs.baidu.com/jquery/1.10.1/jquery.min.js"></script>
+	<script>
+		var canvas = document.getElementById('myCanvas');
+		var ctx = canvas.getContext('2d');
+		var balls = [];
+		var ballNum = 10;
+
+		document.body.onload = init();
+
+		function init () {
+			for (var i = 0; i < ballNum; i ++) {
+				x = Math.random() * canvas.width;
+				y = Math.random() * canvas.height;
+				R = Math.random() * 50 + 10;
+
+				if (x > canvas.width - R) {
+					x = canvas.width - R;
+				}
+				if (x < R) {
+					x = R;
+				}
+				if (y < R) {
+					y = R;
+				}
+				if (y > canvas.height - R) {
+					y = canvas.height - R;
+				}
+
+				r = parseInt(Math.ceil(Math.random() * 255));
+				g = parseInt(Math.ceil(Math.random() * 255));
+				b = parseInt(Math.ceil(Math.random() * 255));
+				a = parseInt(Math.ceil(Math.random() * 7 + 2)) / 10;
+				color = 'rgba(' + r + ',' + g + ',' + b + ',' + a +')';
+
+				var aBall = {
+					x: x,
+					y: y,
+					R: R,
+					color: color
+				}
+				balls[i] = aBall;
+
+				drawBall(balls[i]);
+			}
+
+			canvas.addEventListener('mousemove', detect);
+		}
+
+		function detect (e) {
+			var e = e || window.event;
+			var x = e.clientX - canvas.getBoundingClientRect().left;
+			var y = e.clientY - canvas.getBoundingClientRect().top;
+
+			r = parseInt(Math.ceil(Math.random() * 255));
+			g = parseInt(Math.ceil(Math.random() * 255));
+			b = parseInt(Math.ceil(Math.random() * 255));
+			a = parseInt(Math.ceil(Math.random() * 7 + 2)) / 10;
+			color = 'rgba(' + r + ',' + g + ',' + b + ',' + a +')';
+			
+			for (var i = 0; i < balls.length; i ++) {
+				ctx.beginPath();
+				ctx.arc(balls[i].x, balls[i].y, balls[i].R, 0 , 2 * Math.PI);
+				ctx.closePath();
+
+				if (ctx.isPointInPath(x, y)) {
+					balls[i].color = 'red';
+					if (balls[i].color === 'red') {
+						balls[i].color = color;
+					}
+				}
+			}
+			draw();
+		}
+
+		function draw () {
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			for (var i = 0; i < balls.length; i ++) {
+				drawBall(balls[i]);
+			}
+		}
+
+		function drawBall (balls) {
+			ctx.beginPath();
+			ctx.fillStyle = balls.color;
+			ctx.arc(balls.x, balls.y, balls.R, 0, 2*Math.PI, false);
+			ctx.closePath();
+			ctx.fill();
+		}
+
+	</script>
+</body>
+</html>

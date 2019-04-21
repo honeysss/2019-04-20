@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/carrousel.js"></script>
+    <link rel="stylesheet" href="css/carrousel.css">
+    <title>carrousel</title>
+</head>
+<body>
+<div class="carrouselDiv" data-settings='{
+                                                "width":1200,
+                                                "height":500,
+                                                "caWidth":900,
+                                                "caHeight":500,
+                                                "scale":0.9,
+                                                "opacity":1,
+                                                "zIndex":1,
+                                                "verticalAlign":"middle",
+                                                "speed":1000,
+                                                "autoPlay":true,
+                                                "playDelay":"1000"
+                                            }'>
+    <div class="prev"><</div>
+    <ul class="carrouselUl">
+        <li class="carrouselLi">
+            <a href="#">
+                <img src="img/19.jpg" class="carrouserImg"/>
+            </a>
+        </li>
+        <li class="carrouselLi">
+            <a href="#">
+                <img src="img/25.jpg" class="carrouserImg"/>
+            </a>
+        </li>
+        <li class="carrouselLi">
+            <a href="#">
+                <img src="img/20.jpg" class="carrouserImg"/>
+            </a>
+        </li>
+        <li class="carrouselLi">
+            <a href="#">
+                <img src="img/14.jpg" class="carrouserImg"/>
+            </a>
+        </li>
+        <li class="carrouselLi">
+            <a href="#">
+                <img src="img/15.jpg" class="carrouserImg"/>
+            </a>
+        </li>
+    </ul>
+    <div class="next">></div>
+</div>
+
+
+<script>
+    $(function () {
+        Carrousel.init($(".carrouselDiv"));
+    })
+
+</script>
+</body>
+</html>

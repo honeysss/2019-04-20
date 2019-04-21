@@ -1,0 +1,32 @@
+// 坐标
+x = Math.random() * canvas.width;
+y = Math.random() * canvas.height;
+
+// 半径
+R = Math.random() * 50 + 10;
+
+//坐标
+if (x > canvas.width - R) {
+	x = canvas.width - R;
+}
+if (x < R) {
+	x = R;
+}
+if (y < R) {
+	y = R;
+}
+if (y > canvas.height - R) {
+	y = canvas.height - R;
+}
+
+//速度
+var speed = [Math.random() * -3 + -2, Math.random() * 3 + 2]
+vx = speed[parseInt(Math.random() * speed.length)];
+vy = speed[parseInt(Math.random() * speed.length)];
+
+//颜色
+r = parseInt(Math.ceil(Math.random() * 255));
+g = parseInt(Math.ceil(Math.random() * 255));
+b = parseInt(Math.ceil(Math.random() * 255));
+a = parseInt(Math.ceil(Math.random() * 7 + 2)) / 10;
+color = 'rgba(' + r + ',' + g + ',' + b + ',' + a +')';

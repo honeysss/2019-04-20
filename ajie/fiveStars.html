@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" rating="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" rating="ie=edge" />
+    <title>五星好评(1)</title>
+    <style type="text/css">
+        body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,input{margin:0;padding:0;}
+        body{font-size:12px;}
+        img{border:none;}
+        li{list-style:none;}
+        input,select,textarea{outline:none;}
+        textarea{resize:none;}
+        a{text-decoration:none;}
+        .rating{
+            width: 250px;
+            height: 48px;
+            position: relative;
+            margin: 100px auto;
+            background: url(img/5930c1e60001795900880279.jpg) 0 -99px repeat-x;
+            cursor: pointer;
+        }
+        .mask{
+            height: 48px;
+            position: absolute;
+            left: 0;
+            background:url(img/5930c1e60001795900880279.jpg) 0 0 repeat-x ;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="rating" data-settings='{"total":6,"num":2.8, "readOnly":false}'>
+    <div class="mask"></div>
+</div>
+
+
+
+
+<script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="js/fiveStar.js"></script>
+<script type="text/javascript">
+
+$(function () {
+    Rating.init($(".rating"));
+})
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			a{
+				text-decoration: none;
+				color: pink;
+				font-size: 40px;
+				margin-left: 40%;
+				font-weight: bold;
+			}
+			.dian{
+				background-color: lavender;
+				margin-top: 10%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="dian">
+			<a href="javascript:;" class="dianji">请点击我 狗芝</a>
+		</div>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(".dianji").click(function(){
+					while(window.prompt("你觉得是李福芝好看还是仵晨露好看","")!=="仵晨露"){
+						window.alert("不不不 你再仔细地考虑一下")
+					}
+					window.alert("没错 我也是这么觉得的 么么哒~");
+				});
+			});
+		</script>
+	</body>
+</html>

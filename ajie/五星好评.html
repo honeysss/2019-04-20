@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<style type="text/css">
+		body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,input{margin:0;padding:0;}
+		body{font-size:12px;}
+		img{border:none;}
+		li{list-style:none;}
+		input,select,textarea{outline:none;}
+		textarea{resize:none;}
+		a{text-decoration:none;}
+		.star_ul_1,.star_ul_2{margin: 200px 200px;float: left;}
+		.star_li{width: 50px;height: 48px;background: url(img/5930c1e60001795900880279.jpg) no-repeat 0 -99px;float: left;cursor: pointer;}
+	</style>
+
+</head>
+<body>
+	<ul class="star_ul_1" data-settings='{"num":2.5}'>
+		<li class="star_li" title="差"></li>
+		<li class="star_li" title="不好"></li>
+		<li class="star_li" title="一般"></li>
+		<li class="star_li" title="好"></li>
+		<li class="star_li" title="很好"></li>
+	</ul>
+	<ul class="star_ul_1" data-settings='{"num":1.5}'>
+		<li class="star_li" title="差"></li>
+		<li class="star_li" title="不好"></li>
+		<li class="star_li" title="一般"></li>
+		<li class="star_li" title="好"></li>
+		<li class="star_li" title="很好"></li>
+	</ul>
+
+	<script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+
+		<!--半颗星星是 0 -199 -->
+
+//		点亮半颗
+        $(function () {
+
+//		    配置默认参数
+            var defaults = {
+                num : 2,
+                readOnly : false,
+            }
+
+//		    点亮整颗星星
+            var lightEntire = function (el) {
+                var options = $.parseJSON($(el).attr("data-settings"));
+                this.el = $(el);
+                this.item = $(el).find("li");
+                this.width = this.item.width();
+                this.opts = $.extend(defaults, options);
+                this.lightOn(this.opts.num);
+                if(!this.opts.readOnly){
+                    this.bindEvent();
+                }
+                this.add = 0;
+
+            }
+
+            lightEntire.init = function (el) {
+                var self = this;
+                el.each(function () {
+                    new lightEntire($(this));
+                })
+
+            }
+
+            lightEntire.prototype.lightOn = function(num){
+				this.item.each(function(index){
+					if(index <= num - 1){
+						$(this).css("background-position","0px 0px");
+					}else if(num - index < 1 && num - index >0){
+						$(this).css("background-position","0px -199px");
+					}else{
+						$(this).css("background-position","0px -99px");
+					}
+				});
+
+            };
+
+            lightEntire.prototype.bindEvent = function () {
+                var self = this;
+                var total  = self.item.length;
+                var index = 0;
+                self.el.on("mousemove",'.star_li',function(e){
+                    if((e.pageX - $(this).offset().left) > (self.width / 2)){
+                        self.add = 1;
+						index = $(this).index()+self.add;
+					}else{
+                        self.add = 0.5;
+                        index = $(this).index() + self.add;
+					}
+
+                    self.lightOn(index);
+
+//					(typeof(self.opts.select) === 'function') && self.opts.select.call(this, index, total);
+//					self.el.trigger('select',[index,total]);
+                }).on("click",'.star_li',function(){
+                    var index = $(this).index()+self.add;
+                    self.opts.num = index;
+
+
+//                    (typeof(self.opts.chosen) === 'function') && self.opts.chosen.call(this, index, total);
+//                    self.el.trigger('chosen',[index,total]);
+                }).on("mouseout",function(){
+                    self.lightOn(self.opts.num);
+                });
+            }
+
+
+            window["lightEntire"]  = lightEntire;
+
+
+        });
+
+        $(function () {
+            lightEntire.init($(".star_ul_1"));
+        })
+
+
+
+
+
+//		点亮整颗
+
+//		$(function () {
+//
+////		    配置默认参数
+//            var defaults = {
+//                num : 2,
+//                readOnly : false,
+//                select : function () {},
+//                chosen : function () {}
+//            }
+//
+////		    点亮整颗星星
+//			var lightEntire = function (el) {
+//                var options = $.parseJSON($(el).attr("data-settings"));
+//			    this.el = $(el);
+//			    this.item = $(el).find("li");
+//			    this.opts = $.extend(defaults, options);
+//                this.lightOn(this.opts.num);
+//                if(!this.opts.readOnly){
+//                    this.bindEvent();
+//                }
+//
+//            }
+//
+//            lightEntire.init = function (el) {
+//				var self = this;
+//				el.each(function () {
+//                    new lightEntire($(this));
+//                })
+//
+//            }
+//
+//            lightEntire.prototype.lightOn = function(num){
+//                num  = parseInt(num);
+//                this.item.each(function(index){
+//                    if(index < num){
+//                        $(this).css("background-position","0px 0px");
+//                    }else{
+//                        $(this).css("background-position","0px -99px");
+//                    }
+//                });
+//            };
+//
+//            lightEntire.prototype.bindEvent = function () {
+//				var self = this;
+//                var total  = self.item.length;
+//                self.el.on("mouseover",'.star_li',function(){
+//                    var index = $(this).index()+1;
+//                    self.lightOn(index);
+//
+////					(typeof(self.opts.select) === 'function') && self.opts.select.call(this, index, total);
+////					self.el.trigger('select',[index,total]);
+//				}).on("click",'.star_li',function(){
+//                    var index = $(this).index()+1;
+//                    self.opts.num = index;
+//
+//
+////                    (typeof(self.opts.chosen) === 'function') && self.opts.chosen.call(this, index, total);
+////                    self.el.trigger('chosen',[index,total]);
+//				}).on("mouseout",function(){
+//                    self.lightOn(self.opts.num);
+//				});
+//            }
+//
+////            var init = function (el, opts) {
+////                opts = $.extend(defaults, opts);
+////                new lightEntire(el, opts).init();
+////            }
+////
+////            return {
+////                init:init
+////			}
+//
+//
+//		window["lightEntire"]  = lightEntire;
+//
+//
+//        });
+//
+//		$(function () {
+//			lightEntire.init($(".star_ul_1"));
+//        })
+
+
+
+
+//		star.init('.star_ul_1',{
+//		    num : 3,
+//			select : function (index, total) {
+//		        console.log(this);
+//				console.log(index + '/' +total);
+//            },
+//            chosen : function (index, total) {
+//                console.log(index + '/' +total);
+//            }
+//		})
+//
+//		$(".star_ul_1").on('select',function (e, index, total) {
+//            console.log(index + '/' +total);
+//        }).on('chosen',function (e, index, total) {
+//            console.log(index + '/' +total);
+//        })
+
+
+
+		
+//		var star=(function(){
+//			var lightOn=function(item2,num){
+//				item2.each(function(index){
+//					if(index<num){
+//						$(this).css("background-position","0px 0px");
+//					}else{
+//						$(this).css("background-position","0px -99px");
+//					}
+//				});
+//			};
+//			var init=function(el,li,num){  //传参
+//				var item1=$(el);
+//				var item2=item1.find(li);
+//				lightOn(item2,num);
+//				item1.on("mouseover",li,function(){
+//					lightOn(item2,$(this).index()+1);
+//				}).on("click",li,function(){
+//					num=$(this).index()+1;
+//				}).on("mouseout",function(){
+//					lightOn(item2,num);
+//				});
+//			};
+//			//插件
+//			$.fn.extend({
+//				star:function(li,num){
+//					return this.each(function(){
+//						init(this,li,num);
+//					});
+//				}
+//			});
+//			return{
+//				init:init
+//			};
+//			})();
+//			star.init(".star_ul_1",".star_li",2);
+//			//star.init(".star_ul_2",".star_lii",3);
+//			$(".star_ul_2").star(".star_lii",4);
+	</script>
+</body>
+</html>

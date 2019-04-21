@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>meanwhile</title>
+	<style>
+		#box {
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+
+	<script>
+		window.onload = function () {
+			var obj = document.getElementById('box');
+			obj.onmouseover = function() {
+				var json = {
+					'width': 201,
+					'height': 400,
+					'opacity': 30
+				}
+				var _this = this;
+				startMove(this, json, function() {
+					startMove(_this, {'width': 300, 'height': 300})
+				});
+			}
+
+			obj.onmouseout = function() {
+				var json = {
+					'width': 200,
+					'height': 200,
+					'opacity': 100
+				}
+				startMove(this, json);
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+	
+	<script src="js/move2.js"></script>
+</body>
+</html>

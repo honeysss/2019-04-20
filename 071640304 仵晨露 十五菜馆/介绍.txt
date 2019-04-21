@@ -1,0 +1,3 @@
+十五餐馆文件夹里面的mainPage.php是打开网页的入口文件，
+fifteenRestaurant是需要连接的MySQL数据库，
+数据库的配置信息在"十五餐馆/php/config.php" 和 "十五餐馆/php/connect.php"内

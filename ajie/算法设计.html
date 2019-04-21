@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>app</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.welcome,.second,.third{
+				position:absolute;
+				left:50%;
+				top:50%;
+				transform:translate(-50%,-50%);
+			}
+			.welcome h1,.second h1,.third h1{
+				display: none;
+			}
+			.forth{
+				position: relative;
+				width: 100%;
+				height: 100%;
+			}
+			.forth_1 h1{
+				position: absolute;
+				left: 30%;
+				margin-top: 15%;
+			}
+			.forth_1 p{
+				float:right;
+				display: block;
+				text-decoration: underline;
+			}
+			.second_line{
+				position: absolute;
+				margin-top: 25%;
+				left: 40%;
+			}
+			.third_line{
+				position: absolute;
+				margin-top: 30%;
+				left: 40%;
+			}
+			.forth_line{
+				position: absolute;
+				margin-top: 35%;
+				left: 40%;
+			}
+			.first_line{
+				position: absolute;
+				margin-top: 20%;
+				left: 40%;
+			}
+			.first_line li,.second_line li,.third_line li,.forth_line li{
+				list-style: none;
+				float: left;
+				display: block;
+				background: black;
+				width: 50px;
+				height: 50px;
+				margin: 15px;
+				color: white;
+				border-radius: 50%;
+				text-align: center;
+				cursor: pointer;
+			}
+			.first_line li span,.second_line li span,.third_line li span,.forth_line li span{
+				display: block;
+				margin-top: 30%;
+			}
+		</style>
+	</head>
+<body>
+	<!--<div class="welcome">
+		<h1>欢迎来到算法战场</h1>	
+	</div>
+	<div class="second">
+		<h1>算法战场是一款为小朋友们专门打造的</h1>
+		<h1>快速提高算法技巧的软件</h1>
+	</div>
+	<div class="third">
+		<h1>具体规则如下</h1>
+	</div>-->
+	<div class="forth">
+		<div class="forth_1">
+			<h1>第十战：69+75=<p class="result">s</p></h1>
+		</div>
+		<div class="forth_2">
+			<ul class="first_line">
+				<li class="one"><span>1</span></li>
+				<li><span>2</span></li>
+				<li><span>3</span></li>
+				<li><span>撤回</span></li>
+			</ul>
+			<ul class="second_line">
+				<li><span>4</span></li>
+				<li><span>5</span></li>
+				<li><span>6</span></li>
+				<li><span>清零</span></li>
+			</ul>
+			<ul class="third_line">
+				<li><span>7</span></li>
+				<li><span>8</span></li>
+				<li><span>9</span></li>
+				<li><span>(</span></li>
+			</ul>
+			<ul class="forth_line">
+				<li><span>.</span></li>
+				<li><span>0</span></li>
+				<li><span>确定</span></li>
+				<li><span>)</span></li>
+			</ul>
+		</div>
+	</div>
+	
+	
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			setTimeout(function(){
+				$(".welcome").find("h1").fadeIn();
+			},1000)
+			setTimeout(function(){
+				$(".welcome").find("h1").fadeOut();
+				$(".second").find("h1").fadeIn();
+			},3000)
+			setTimeout(function(){
+				$(".second").find("h1").fadeOut();
+				$(".third").find("h1").fadeIn();
+			},5000)
+			setTimeout(function(){
+				$(".third").find("h1").fadeOut();
+			},5000)
+			console.log($(".result").html);
+			$("one").click(function(){
+				$(".result").html(li.html);
+			})
+		})
+			
+	</script>
+</body>
+</html>

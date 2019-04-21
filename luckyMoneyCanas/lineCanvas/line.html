@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/line.css"/>
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <title>line</title>
+</head>
+<body style="overflow-x: hidden;overflow-y: hidden;position: relative;">
+<div id="container">
+    <div class="color">
+        <p>请选择画笔的颜色：</p>
+        <ul>
+            <li onclick="changeColor(0)" class="activeColor"></li>
+            <li onclick="changeColor(1)"></li>
+            <li onclick="changeColor(2)"></li>
+            <li onclick="changeColor(3)"></li>
+            <li onclick="changeColor(4)"></li>
+        </ul>
+    </div>
+
+    <div class="size">
+        <p>请选择画笔的粗细度：</p>
+        <ul>
+            <li onclick="changeSize(0)">粗</li>
+            <li onclick="changeSize(1)" class="activeSize">中</li>
+            <li onclick="changeSize(2)">细</li>
+        </ul>
+    </div>
+
+    <div class="eraser">
+        <p>橡皮擦：</p>
+        <ul>
+            <li onclick="eraseCanvas(0)"></li>
+            <li onclick="eraseCanvas(1)"></li>
+            <li onclick="eraseCanvas(2)"></li>
+        </ul>
+    </div>
+
+    <span class="clear" onclick="clearCanvas()">清除画布</span>
+</div>
+
+<canvas id="lineCanvas" style="box-shadow: -1px -1px 1px pink,2px 2px 2px pink;position: absolute;display: block;"
+onmousedown="mouseDown(event)" onmouseup="mouseUp(event)" onmousemove="mouseMove(event)" onmouseout="mouseOut(event)" ></canvas>
+
+<script src="js/line.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<style>
+		#box {
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			font-size: 10px;
+		}
+		#test {
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			font-size: 10px;
+			margin-top: 50px;
+			animation: test 5s infinite;
+		}
+		@keyframes test {
+			0% {background-color: red; width: 200px; height: 200px;}
+			50% {background-color: green; height: 300px; border-radius: 50%;}
+			100% {background-color: pink; width: 500px; }
+		}
+	</style>
+
+	<script>
+		window.onload = function() {
+			var obj = document.getElementById('box');
+			obj.onmouseover = function() {
+				startMove();
+			}
+
+			var timer = null;
+			function startMove() {
+				timer = setInterval(function () {
+					obj.style.width = parseInt(getStyle(obj, 'width')) + 1 + 'px';
+					obj.style.fontSize = parseInt(getStyle(obj, 'fontSize')) + 1 + 'px';
+				}, 30)
+			}
+
+			function getStyle(obj, attr) {
+				if (obj.current) {
+					return obj.currentStyle[attr];
+				} else {
+					return getComputedStyle(obj, false)[attr];
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="box">font size</div>
+	<div id="test"></div>
+		
+	</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>mouseOver</title>
+	<style>
+		.container {
+			width: 100px;
+			height: 100px;
+			position: absolute;
+		}
+		.container1 .gif, 
+		.container2 .gif {
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			cursor: pointer;
+			z-index: 10;
+		}
+		.container1 .gif {
+			top: 30px;
+			left: 30px;
+		}
+		.container2 .gif {
+			top: 30px;
+			left: 30px;
+		}
+		.container1 .jpg, 
+		.container2 .jpg {
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			border-radius: 50%;
+		}
+		.container1 {
+			top: 164px;
+			left: 270px
+		}
+		.container2 {
+			top: 164px;
+			left: 970px
+		}
+	</style>
+</head>
+<body>
+	<div class="container1 container">
+		<img src="1.gif" class="gif" />
+		<img src="1.jpg" class="jpg" style="opacity: 0;display: none;" />
+	</div>
+
+
+	<div class="container2 container">
+		<img src="1.gif" class="gif" />
+		<img src="1.jpg" class="jpg" style="opacity: 0;display: none;"/>
+	</div>
+
+	<script src="js/index.js"></script>
+</body>
+</html>

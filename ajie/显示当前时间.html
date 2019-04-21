@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ceshi</title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			function showtime(){
+				var time=new Date();
+				var hours=time.getHours();
+				var minutes=time.getMinutes();
+				var seconds=time.getSeconds();
+				var timer=" "+((hours>12)?hours-12:hours);
+				timer+=((minutes<10)?":0":":")+minutes;
+				timer+=((seconds<10)?":0":":")+seconds;
+				timer+=" "+((hours>12)?"pm":"am");
+				document.clock.show.value=timer;
+				setTimeout("showtime()",1000);
+			}
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body onload="showtime()">
+		<form name="clock">
+			<input type="text" name="show" />
+		</form>
+	</body>
+</html>

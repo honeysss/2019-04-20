@@ -1,0 +1,88 @@
+	@import '_mixin';
+.toolbar-item(@before, @after) {
+		background-position: 0 @before;
+
+		&:hover {
+			background-position: 0 @after;
+		}
+	}
+
+
+	.container {
+		position: fixed;
+		bottom: 50px;
+		right: 10%;
+	}
+
+	.toolbar, .icon {
+		background-image: url('../img/toolbar.png');
+		background-repeat: no-repeat;
+		display: block;
+	}
+	// a标签
+	.toolbar {
+		margin-bottom: 2px;
+		width: 52px;
+		height: 52px;
+		cursor: pointer;
+		position: relative;
+		// 要变换的属性 和 时间
+		.transition(background-position 1s);
+		&:hover {
+			.icon {
+				.transform(1s);
+				.opacity(1);
+			}
+		}
+	}
+	.toolbar-one {
+		.toolbar-item(-798px, -860px);
+
+		.icon-one {
+			background-position: 6px -2px;
+		}
+	}
+	
+
+	.toolbar-two {
+		// background-position: 0 -426px;
+
+		// &:hover {
+		// 	background-position: 0 -488px;
+		// }
+		.toolbar-item(-426px, -488px);
+	}
+	
+
+	.toolbar-three {
+		.toolbar-item(-550px, -612px);
+		.icon-two {
+			background-position: 6px -226px;
+		}
+	}
+	
+	
+
+	.toolbar-four {
+		// background-position: 0 -674px;
+
+		// &:hover {
+		// 	background-position: 0 -736px;
+		// }
+		
+		.toolbar-item(-674px, -736px);
+	}
+	
+
+// span标签
+	.icon {
+		position: absolute;
+		width: 160px;
+		height: 180px;
+		right: 56px;
+		bottom: 0;
+		.opacity(0);
+		.transOrigin(right bottom);
+		.transform(scale(0.01));
+		.transition(all 1s);
+	}

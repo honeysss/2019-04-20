@@ -1,0 +1,163 @@
+* {
+		margin: 0;
+		padding: 0;
+	}
+	a {
+		text-decoration: none;
+	}
+
+	body {
+		background-color: pink;
+	}
+	.font {
+		font-family: "幼圆";
+		font-weight: bold;
+		color: red;
+	}
+
+	h1 {
+		text-align: center;
+		margin-top: 100px;
+		.font;
+	}
+
+
+	.sound {
+		@width: 600px;
+		width: @width;
+		margin: 100px auto;
+
+
+		.headIcon {
+			border-radius: 50%;
+		}
+
+		.sound-content {
+			display: inline-block;
+			position: relative;
+		}
+
+
+		.sound-one {
+			float: left;
+
+
+			svg {
+				left: -165px;
+				bottom: 140px;
+				path {
+					opacity: 0;
+					transform: scale(0.01);
+					transition: opacity 0.3s ease,
+											transform 0.3s ease;
+					transform-origin: right bottom;
+				}
+				#path1 {
+					transition-delay: 0;
+				}
+				#path2 {
+					transition-delay: 0.1s;
+				}
+				#path3 {
+					transition-delay: 0.2s;
+				}
+				#path4 {
+					transition-delay: 0.3s;
+				}
+			}
+
+
+			a:hover {
+
+				.headIcon {
+					box-shadow: 0 0 10px #F01D1D;
+				}
+				p {
+					transition-delay: 0.3s;
+					opacity: 1;
+					transform: scale(1);
+				}
+				svg {
+					path {
+						opacity: 1;
+						transform: scale(1);
+					}
+				}
+			}
+
+		}
+
+
+
+
+		.sound-two {
+			float: right;
+
+			svg{
+				left: -40px;
+				bottom: 170px;
+
+				polygon {
+					// 描边
+					stroke-dasharray: 1500;
+					stroke-dashoffset: -1500;
+					opacity: 0;
+					transition: 1s;
+				}
+			}
+
+
+			a:hover {
+
+				.headIcon {
+					box-shadow: 0 0 10px #F01D1D;
+				}
+				p {
+					opacity: 1;
+					transform: scale(1);
+				}
+				 svg {
+					polygon {
+						stroke-dashoffset: 0;
+						opacity: 1;
+						transition: stroke-dashoffset 1s ease,
+												opacity 0.3s ease;
+					}
+				}
+			}
+		}
+
+
+
+
+		span {
+			margin-left: 25px;
+			.font;
+		}
+
+		p {
+			position: absolute;
+			display: block;
+			width: 120px;
+			height: 80px;
+			text-align: center;
+			bottom: 170px;
+			opacity: 0;
+			transition: transform 0.5s ease,
+								 opacity 0.5s ease;
+			transform: scale(0.01);
+			transform-origin: bottom;
+			color: #260808;
+			font-family: "幼圆";
+			font-weight: bol
+		}
+		.toolTip-one {
+			left: -125px;
+		}
+
+		svg {
+			position: absolute;
+		}
+
+	}
+	

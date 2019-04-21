@@ -1,0 +1,161 @@
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #47c9af;
+	color: #74777b;
+	font-weight: 300;
+	font-size: 1.5em;
+	font-family: "Raleway", "Arial";
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+a:link, a:visited, a:focus {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+	display: inline-block;
+	margin: 0 1em;
+}
+
+*, *:after, *:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*:after, *:before {
+	display: block;
+	content: "";
+}
+
+*:after {
+	clear: both;
+}
+
+/*导航*/
+.nav {
+	width: 900px;
+	height: 300px;
+	margin: 200px auto;
+}
+
+.toolTip {
+	display: inline-block;
+	font-weight: 700;
+	color: rgba(0, 0, 0, 0.3);
+	padding: 0.15em 0.25em;
+	position: relative;
+	transition: color 0.3s;
+}
+
+.toolTip:hover {
+	color: white;
+}
+
+.toolTip-content {
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-color: #fff;
+	left: 50%;
+	margin-left: -40px;
+	bottom: 100%;
+	margin-bottom: 30px;
+	text-align: center;
+	padding-top: 20px;
+	color: #47c9af;
+	opacity: 1;
+	transition: opacity 0.3s, transform 0.3s;
+}
+
+.toolTip-content i {
+	margin-top: 8px;
+	opacity: 1;
+	transition: opacity 0.3s, transform 0.3s;
+}
+
+.toolTip-content::after {
+	width: 30px;
+	height: 20px;
+	background: url(../img/tooltip1.svg) no-repeat center center;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -15px;
+	margin-top: -7px;
+}
+
+
+
+.toolTip-1 .toolTip-content {
+	transform: translate3d(0, 10px, 0) rotate3d(1, 1, 1, 45deg);
+	transform-origin: center bottom;
+}
+
+.toolTip-1 .toolTip-content i {
+	transform: scale3d(0, 0, 1) translate3d(0, 10px, 0);
+}
+
+
+
+
+
+.toolTip-2 .toolTip-content {
+	transform: translate3d(0, 20px, 0);
+}
+
+.toolTip-2 .toolTip-content i {
+	transform: translate3d(0, 15px, 0)
+}
+
+
+
+
+.toolTip-3 .toolTip-content {
+	transform: translate3d(0, 10px, 0) rotate3d(0, 1, 0, 90deg);
+	transform-origin: center bottom;
+}
+.toolTip-3 .toolTip-content i {
+	transform: translate3d(0, 10px, 0)
+	transform: scale3d(0, 0, 1);
+}
+
+
+
+.toolTip-4 .toolTip-content {
+	transform: translate3d(0, -20px, 0);
+}
+
+.toolTip-4 .toolTip-content i {
+	transform: translate3d(0, -10px, 0)
+}
+
+
+
+.toolTip-5 .toolTip-content i {
+	transform: translate3d(0, 15px, 0)
+}
+
+
+.toolTip:hover .toolTip-content,
+.toolTip:hover .toolTip-content i {
+	opacity: 1;
+	transform: translate3d(0, 0, 0) rotate3d(1, 1, 1, 0) scale3d(1, 1, 1);
+}
+

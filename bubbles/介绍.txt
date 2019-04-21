@@ -1,0 +1,32 @@
+/**
+这里讲了一个前端依赖管理工具bower
+利用bower可以直接安装github上的别人写好了的程序到本地
+也可以将自己写的程序打包成插件推送到github上
+
+bower register (包名 随意起) + 仓库名
+将这个仓库打包成一个包
+
+利用bower info （包名）可以查看这个包信息
+
+然后再另一个文件夹下执行bower install (包名）可以将这个包下载到本地
+**/
+
+/**
+还有一个.gitignore文件，里面存放执行git时忽略的文件的名称
+**/
+
+
+/**
+each第一个参数是索引 第二个参数是值
+$('img').each(function(index, item) { }
+
+forEach第一个参数是值 第二个参数是索引
+[1, 2, 3].forEach(function(item, index) { }
+**/
+
+
+/**
+搭建本地服务器：
+cnpm install http-server -g  	在全局环境下下载
+进入到相关文件夹下执行 http-server 就可以在本地服务器上打开文件 可跨域访问
+**/

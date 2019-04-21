@@ -1,0 +1,294 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.widthHeight {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+body .top {
+  margin-top: 30px;
+  font-weight: bold;
+  margin-bottom: 100px;
+}
+body #address {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+body .progress li {
+  float: left;
+  width: 25%;
+  color: #bfb6b6;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #bfb6b6;
+}
+body .progress li span {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #bfb6b6;
+  position: absolute;
+  top: 57px;
+  margin-left: -39px;
+}
+body .progress li .dotted-three {
+  margin-left: -21px !important;
+}
+body .progress .active {
+  color: #e78f4f;
+  border-bottom: 3px solid #e78f4f;
+  margin-top: -1.5px;
+}
+body .progress .active span {
+  background-color: #e78f4f;
+}
+.middle-top,
+.footer {
+  margin-bottom: 50px;
+}
+.middle-top .cart-font,
+.footer .cart-font {
+  color: #bfb6b6;
+  position: relative;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.middle-top .cart-font .left,
+.footer .cart-font .left,
+.middle-top .cart-font .right,
+.footer .cart-font .right {
+  position: absolute;
+  width: 45%;
+  top: 16px;
+  background-color: #bfb6b6;
+  outline: none;
+}
+.middle-top .cart-font .left,
+.footer .cart-font .left {
+  left: 0;
+}
+.middle-top .cart-font .right,
+.footer .cart-font .right {
+  right: 0;
+}
+.middle-top .cart-font h3,
+.footer .cart-font h3 {
+  text-align: center;
+}
+.middle-content {
+  color: #5b5959;
+  font-size: 14px;
+}
+.middle-content ul {
+  padding-left: 1%;
+}
+.middle-content ul .active {
+  border: 2px solid #e78f4f;
+}
+.middle-content ul li {
+  position: relative;
+  width: 20%;
+  height: 150px;
+  border: 2px solid #bfb6b6;
+  float: left;
+  margin-right: 2%;
+  padding: 20px 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.middle-content ul li span {
+  display: block;
+  margin-bottom: 15px;
+}
+.middle-content ul li .address {
+  margin-bottom: 40px !important;
+}
+.middle-content ul li .default {
+  color: #e78f4f;
+  width: 100px;
+}
+.middle-content ul li .edit,
+.middle-content ul li .deleteAddress {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  cursor: pointer;
+  right: 20px;
+}
+.middle-content ul li .edit {
+  top: 20px;
+  background: url('../img/编辑.png') no-repeat;
+  background-size: 20px;
+}
+.middle-content ul li .deleteAddress {
+  background: url('../img/删除.png') no-repeat;
+  background-size: 20px;
+  bottom: 10px;
+}
+.middle-content ul .add {
+  background: url('../img/添加.png') no-repeat center;
+  background-size: 60px;
+  cursor: pointer;
+}
+.middle-content ul .add span {
+  position: absolute;
+  bottom: 30px;
+  left: 40%;
+}
+.middle-content .more,
+.middle-content .less {
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #e78f4f;
+  cursor: pointer;
+}
+.middle-content .more .more-icon,
+.middle-content .less .more-icon {
+  display: inline-block;
+  transform: rotate(90deg);
+  margin-left: 5px;
+}
+.middle-content .less .less-icon {
+  display: inline-block;
+  margin-left: 5px;
+  transform: rotate(-90deg);
+}
+.clear {
+  clear: both;
+}
+.deliver-methods {
+  margin-bottom: 20px;
+}
+.deliver-methods p {
+  width: 220px;
+  height: 100px;
+  text-align: center;
+  color: #bfb6b6;
+  border: 2px solid #bfb6b6;
+  display: inline-block;
+  cursor: pointer;
+}
+.deliver-methods .standard {
+  margin-right: 20px;
+  margin-left: 34%;
+}
+.deliver-methods .active {
+  color: #5b5959;
+  border: 2px solid #e78f4f;
+}
+.deliver-methods .top {
+  display: block;
+  margin-bottom: 10px;
+}
+.delete,
+.editAddress {
+  z-index: 5;
+  width: 40%;
+  height: 240px;
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  margin-left: -20%;
+  background-color: white;
+}
+.delete .delete-product-icon,
+.editAddress .delete-product-icon {
+  font-size: 30px;
+  color: red;
+  opacity: 0.6;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+.delete .delete-product-icon:hover,
+.editAddress .delete-product-icon:hover {
+  opacity: 1;
+  transform: rotate(30deg);
+}
+.delete .delete-info,
+.editAddress .delete-info,
+.delete .edit-info,
+.editAddress .edit-info {
+  text-align: center;
+  font-size: 20px;
+  color: red;
+  margin-top: 40px;
+}
+.delete .yes,
+.editAddress .yes,
+.delete .no,
+.editAddress .no {
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 100px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+.delete .yes,
+.editAddress .yes {
+  color: red;
+  margin-left: 13%;
+  margin-right: 10%;
+}
+.delete .yes:hover,
+.editAddress .yes:hover {
+  background-color: red;
+  color: white;
+}
+.delete .no,
+.editAddress .no {
+  background-color: red;
+  color: white;
+}
+.delete-mask {
+  width: 1519px;
+  height: 800px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: black;
+  opacity: 0.4;
+  z-index: 2;
+}
+.editAddress {
+  top: 10%;
+  height: 355px;
+  color: #5b5959;
+}
+.editAddress .edit-info {
+  margin-bottom: 20px;
+}
+.editAddress label {
+  padding-left: 20%;
+  margin-right: 5%;
+}
+.editAddress input {
+  width: 300px;
+  height: 20px;
+  margin-bottom: 5%;
+  text-indent: 4px;
+}
+.editAddress .yes,
+.editAddress .no {
+  margin-top: 20px;
+}

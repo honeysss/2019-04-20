@@ -1,0 +1,242 @@
+
+/*评论导航区*/
+.comment-content{
+    width:980px;
+    float: right;
+    background-color: white;
+    padding-bottom: 35px;
+    display: none;
+    height:auto;
+    margin-bottom: 40px;
+}
+.choose{
+    padding-top:20px;
+    margin-left: -25px;
+    display: block;
+    padding-bottom: 20px;
+}
+.choose input{
+    margin:0 5px 0 50px;
+    vertical-align: middle;
+}
+.choose a{
+    font-size: 13px;
+    color: black;
+}
+.choose a:hover,
+.active3{
+    color: #FFA627 !important;
+}
+
+/*评论区*/
+.userName{
+    float: left;
+    line-height: 25px;
+    color: #333333;
+    font-weight: bold;
+    font-size: 15px;
+    margin-left: 60px;
+    margin-top: -20px;
+    margin-right: 7px;
+}
+.star_ul_1 {
+    float: left;
+    margin:1px 10px 0 10px;
+}
+.star_li{
+    float: left;
+}
+.star_li img{
+    width: 10px;
+    height: 10px;
+    margin-left: 3px;
+}
+.goodCo{
+    float: left;
+    line-height: 25px;
+    font-size: 12px;
+    color: #a0a0a0;
+    margin-top: -20px;
+}
+.coDate{
+    float: right;
+    display: inline-block;
+    line-height: 25px;
+    font-size: 12px;
+    color: #a0a0a0;
+    margin-top: -20px;
+}
+.coContent{
+    width:80%;
+    margin-left: 60px;
+    line-height: 25px;
+    color: #666666;
+    font-size: 14px;
+    word-wrap: break-word;
+    margin-top: 20px;
+}
+.headIcon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+}
+.comment-area{
+    width:100%;
+    height:auto;
+}
+
+.comment-area-ul{
+    width:90%;
+    height:auto;
+    padding:20px 50px;
+    position: relative;
+}
+.comment-area-li{
+    padding: 20px 0 10px 0;
+    width:100%;
+    border-bottom: 1px solid #E5E5E5;
+    position: relative;
+}
+.delete-comment{
+    width:25px;
+    height:25px;
+    position: relative;
+    left: 96%;
+    top:-18px;
+    cursor: pointer;
+}
+.star-img-p{
+    display: inline-block;
+    float: left;
+    margin-top: -20px;
+}
+.star-img{
+    width:77px;
+    height:12px;
+    margin: 0 8px;
+    vertical-align: -2px;
+}
+.upFoodImg{
+    width:17px;
+    height:17px;
+    margin-right: 2px;
+    margin-left: 60px;
+    margin-top:5px;
+}
+.upFoodImg{
+    vertical-align: -3px;
+}
+.downFoodName{
+    font-size: 12px;
+    color: #A0A0A0;
+    margin-bottom: 5px;
+}
+.upFoodName{
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #FFA627;
+}
+
+/*page*/
+.change-page{
+    width:980px;
+    height:90px;
+    position: absolute;
+    left:44%;
+}
+.before{
+    display: inline-block;
+    width:75px;
+    font-size: 15px;
+    color: #CCCCCC;
+    text-align: center;
+    line-height:30px;
+    float: left;
+    margin-right: 20px;
+    height: 30px;
+    margin-top: 30px;
+    cursor: auto;
+    border-radius: 2px;
+}
+.after{
+    display: inline-block;
+    width:75px;
+    font-size: 15px;
+    color: #666666;
+    text-align: center;
+    height:30px;
+    line-height:30px;
+    float: left;
+    margin-left:20px;
+    margin-top: 30px;
+    border-radius: 2px;
+}
+.pageOne,
+.pageTwo,
+.pageThree{
+    width:30px;
+    height:30px;
+    display: block;
+    text-align: center;
+    line-height:30px;
+    color:#666666;
+    margin:30px 5px 0 5px;
+    float: left;
+    border-radius: 2px;
+}
+.after:hover,
+.pageOne:hover,
+.pageTwo:hover,
+.pageThree:hover{
+    background-color: #333333;
+    color: white;
+    border-radius: 2px;
+}
+.active4{
+    font-weight: bold;
+    background-color: #333333;
+    color: white;
+    border-radius: 2px;
+}
+#pageTwo{
+    display: none;
+}
+#pageThree{
+    display: none;
+}
+#pageFour{
+    display: none;
+}
+
+/*底部*/
+/*.coFoot{*/
+    /*width:100%;*/
+    /*height:80px;*/
+    /*background-color: #333333;*/
+    /*text-align: center;*/
+    /*position: relative;*/
+/*}*/
+/*.coFoot img{*/
+    /*position: absolute;*/
+    /*top:50%;*/
+    /*margin-top: -10px;*/
+    /*left:50%;*/
+    /*margin-left: -105px;*/
+    /*width:20px;*/
+    /*height:20px;*/
+/*}*/
+/*.coFoot p{*/
+    /*line-height:80px;*/
+    /*font-size: 12px;*/
+    /*color: #A0A0A0;*/
+    /*position: absolute;*/
+    /*top:1%;*/
+    /*left:50%;*/
+    /*margin-left: -80px;*/
+/*}*/
+/*.footBo{*/
+    /*position: fixed;*/
+    /*bottom:-80px;*/
+    /*left:0;*/
+/*}*/

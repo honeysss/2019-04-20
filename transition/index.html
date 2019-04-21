@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>transtion</title>
+	<style>
+		#block {
+			width: 200px;
+			height: 200px;
+			text-align: center;
+			margin: 0 auto;
+			line-height: 200px;
+			position: relative;
+		}
+		span {
+			background-color: black;
+			display: block;
+			position: absolute;
+			width: 200px;
+			height: 200px;
+			color: white;
+			font-size: 200px;
+			z-index: -1;
+			font-family: "宋体";
+		}
+		#page {
+			text-align: center;
+			margin-top: 20px;
+		}
+		#page a:first-child {
+			margin-right: 20px;
+		}
+		#page a:hover {
+			color: red;
+		}
+		#box {
+			perspective: 800;
+			perspective-origin: 50% 50%;
+			overflow: hidden;
+		}
+		#block {
+			transition: transform .6s;
+			transform-style: preserve-3d;
+		}
+		#box span:first-child {
+			transform: rotateX(0);
+			transform-origin: bottom;
+			transition: transform .5s linear;
+		}
+
+		#box span {
+			transition: transform .5s linear;
+			transform-origin: bottom;
+			transform: rotateX(90deg);
+			
+		}
+
+	</style>
+	<script>
+		window.onload = function () {
+			var sps = document.getElementsByClassName('num');
+			var pre = document.getElementById('p')
+			var nex = document.getElementById('n')
+			var index = 0;
+			// 点击下一张 让当前页沿x旋转-90度 让下一页沿x旋转0
+			// 点击上一张 让当前页沿x旋转90福 上一张沿x旋转0
+			pre.onclick = function () {
+				index--;
+				if (index <= 0) {
+					index = 0;
+				}
+				for (var i = 0; i < sps.length; i ++) {
+					// 相等的情况下 0度
+					if (i === index) {
+						sps[i].style.transform = 'rotateX(0)';
+					} else if(i === index+1) {
+						sps[i].style.transform = 'rotateX(90deg)';
+					} 
+				}
+				
+			}
+			nex.onclick = function () {
+				index++;
+				if (index >= sps.length-1) {
+					index = sps.length-1;
+				}
+				for (var i = 0; i < sps.length; i ++) {
+					// 相等的情况下 0度
+					if (i === index) {
+						sps[i].style.transform = 'rotateX(0)';
+						// 上一张 -90度
+					} else if(i === index-1) {
+						sps[i].style.transform = 'rotateX(-90deg)';
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<div id="block">
+			<span class="num">1</span>
+			<span class="num">2</span>
+			<span class="num">3</span>
+			<span class="num">4</span>
+			<span class="num">5</span>
+		</div>
+		<div id="page">
+			<a class="prev" id="p" href="javascript:;">prev</a>
+			<a class="next" id="n" href="javascript:;">next</a>
+		</div>
+	</div>
+
+	
+</body>
+</html>

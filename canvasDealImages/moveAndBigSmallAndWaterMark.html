@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>toBig</title>
+	<style>
+		body {
+				background-color: #383639;
+		}
+		#myCanvas {
+			display: block;
+			margin: 40px auto;
+			margin-bottom: 40px;
+		}
+		#range {
+			display: block;
+			width: 400px;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="myCanvas" width="800px" height="400px"></canvas>
+	<input type="range" value="1" max="3" min="0.5" step="0.01" id="range" />
+	<!-- 水印 -->
+	<canvas id="waterMark" style="display: none; margin: 0 auto;" width="240px" height="50px"></canvas>
+
+	<script>
+		var canvas = document.getElementById('myCanvas');
+		var ctx = canvas.getContext('2d');
+		var slider = document.getElementById('range')
+		// slider.addEventListener('mousemove', mouseMove, false);
+		var girlPic = new Image();
+		var scale = slider.value;
+		var isDraggable = false;
+		var startX;
+		var startY;
+		var endX;
+		var endY;
+		var disX = 0;
+		var disY = 0;
+
+		// 水印画布
+		var waterMark = document.getElementById('waterMark');
+		var waterCtx = waterMark.getContext('2d');
+
+		window.onload = function () {
+
+			girlPic.src = './img/girl.jpg';
+			// 图片加载完毕后画图片
+			girlPic.onload = function () {
+				drawGirl(scale);
+				slider.onmousemove  = function () {
+					scale = slider.value;
+					ctx.clearRect(0, 0, canvas.width, canvas.height);
+					drawGirl(scale);
+				}
+			}
+
+			// 在水印上写字
+			writeFont();
+		}
+
+
+		// 鼠标拖拽
+		// 获取鼠标点击时候的坐标值 可拖拽
+		canvas.onmousedown = function (e) {
+			e.preventDefault();
+			isDraggable = true;
+			var winX = e.pageX;
+			var winY = e.pageY;
+			var point = windowTocanvas(winX, winY);
+			startX = point.x;
+			startY = point.y;
+		}
+
+		// 如果可拖拽 获取坐标
+		canvas.onmousemove = function (e) {
+			e.preventDefault();
+			if (isDraggable) {
+				var winX = e.pageX;
+				var winY = e.pageY;
+				var point = windowTocanvas(winX, winY);
+				endX = point.x;
+				endY = point.y;
+
+				// 获取移动距离
+				disX += endX - startX;
+				disY += endY - startY;
+
+				// 清除画布
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				// 画画布
+				drawGirl(scale);
+
+				startX = endX;
+				startY = endY;
+			}
+		}
+
+		// 不可拖拽
+		document.onmouseup = function (e) {
+			e.preventDefault();
+			isDraggable = false;
+		}
+
+		canvas.onmouseout = function (e) {
+			e.preventDefault();
+			isDraggable = false;
+		}
+
+		function windowTocanvas (winX, winY) {
+			var dis = canvas.getBoundingClientRect();
+			return {
+				x: winX - dis.left,
+				y: winY - dis.top
+			}
+		}
+
+		function drawGirl (scale) {
+			var imageWidth = canvas.width * scale;
+			var imageHeight  = canvas.height * scale;
+
+			// 放大的情况下 开始坐标在画布的外面
+			// 缩小的情况下 开始坐标在画布的里面
+			var startX = (canvas.width - imageWidth) / 2 + disX ;
+			var startY = (canvas.height - imageHeight) / 2 + disY;
+
+			// 如果超出图片边界
+			if (scale <= 1) {
+				if (startX <= 0) {
+					startX = 0;
+				}
+				if (startX >= canvas.width - imageWidth) {
+					startX = canvas.width - imageWidth;
+				}
+				if (startY <= 0) {
+					startY = 0;
+				}
+				if (startY >= canvas.height - imageHeight) {
+					startY = canvas.height - imageHeight;
+				}
+			} else {
+				if (startX <= canvas.width - imageWidth) {
+					startX = canvas.width - imageWidth;
+				}
+				if (startX >= 0) {
+					startX = 0;
+				}
+				if (startY <= canvas.height - imageHeight) {
+					startY = canvas.height - imageHeight;
+				}
+				if (startY >= 0) {
+					startY = 0;
+				}
+			}
+
+			ctx.drawImage(girlPic, startX, startY, imageWidth, imageHeight);
+			console.log(startX, startY, imageWidth, imageHeight)
+			// 把水印绘制到画布上
+			ctx.drawImage(waterMark, canvas.width - waterMark.width, canvas.height - waterMark.height);
+		}
+
+		// 写字
+		function writeFont () {
+			waterCtx.font = 'bold 30px Arial';
+			waterCtx.lineWidth = '1';
+			waterCtx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+			waterCtx.textBaseline = 'middle';
+			waterCtx.fillText('scj is a little pig', 0, 30);
+		}
+
+	</script>
+</body>
+</html>

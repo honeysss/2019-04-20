@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>canvasPlotting</title>
+	<style>
+		#shapeCanvas {
+			display: block;
+			margin: 20px auto;
+			border: 1px solid #BBA2A2;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="shapeCanvas" width="1000px" height="600px"></canvas>
+
+	<script src="http://libs.baidu.com/jquery/1.10.1/jquery.min.js"></script>
+	<script>
+		var canvas = document.getElementById('shapeCanvas');
+		var ctx = canvas.getContext('2d');
+
+		document.body.onload = init();
+
+		function init () {
+			CanvasRenderingContext2D.prototype.drawLine = function (x1, y1, x2, y2, width, color, style) {
+				this.beginPath();
+				this.lineWidth = width || '1px';
+				this.strokeStyle = color || 'black';
+				this.lineCap = style || 'square';
+				this.moveTo(x1, y1);
+				this.lineTo(x2, y2);
+				this.closePath();
+				this.stroke();
+			}
+
+			ctx.drawLine(100, 100, 100, 200, 10, 'red', 'round');
+
+		}
+	</script>
+</body>
+</html>

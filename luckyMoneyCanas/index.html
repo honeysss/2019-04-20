@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" 
+				content="height = device-height,
+								width = device-width,
+								initial-scale = 1.0,
+								maximum-scale = 1.0,
+								minimum-scale = 1.0,
+								user-scaleable = no" />
+	<title>images</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#blur-div {
+			position: relative;
+			margin: 40px auto;
+			width: 1000px;
+			height: 500px;
+		}
+		.image {
+			position: absolute;
+			display: block;
+			width: 1000px;
+			height: 500px;
+			filter: blur(10px);
+			left: 0;
+			top: 0;
+			z-index: 0;
+		}
+		span {
+			display: inline-block;
+			width: 100px;
+			height: 40px;
+			color: #F8F3F3;
+			background-color: #181717;
+			font-weight: bold;
+			position: absolute;
+			bottom: 30px;
+			text-align: center;
+			line-height: 40px;
+			border-radius: 10px;
+			cursor: pointer;
+			z-index: 5;
+			font-size: 20px;
+		}
+		.reset {
+			left: 200px;
+		}
+		.show {
+			right: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div id="blur-div">
+		<img src="2.jpg" class="image" />
+		<canvas id="myCanvas" width="1000px" height="500px" style="display: block; position: absolute; left: 0; top: 0; z-index: 1;"></canvas>
+		<span class="reset" onclick="reset()" onselectstart="return false;">reset</span>
+		<span class="show" onclick="show()" onselectstart="return false;">show</span>
+	</div>
+	<script src="http://libs.baidu.com/jquery/1.10.1/jquery.min.js"></script>
+	<script>
+		var canvas = document.getElementById('myCanvas');
+		var ctx = canvas.getContext('2d');
+		var image = new Image();
+
+		var r, randX, randY, clipCircle;
+
+		var timer, timer2;
+
+		// 定义一个显示区域的数组 每次点击和移动鼠标的时候都获取一个以坐标为原点 半径为r的剪辑区 并让这个剪辑区显示出来
+		// 循环
+		// showArea = [
+		// 	{
+		// 		x:
+		// 		y:
+		// 		r:
+		// 	}
+		// ]
+		var showArea = [];
+		var showAreaR = 50;
+
+		var startX = 0, startY = 0, endX = 0, endY = 0, isMouseDown = false;
+
+		var WIDTH = window.innerWidth;
+		var HEIGHT = window.innerHeight;
+
+		window.onload = function () {
+
+			// 手机端
+			canvas.addEventListener('touchstart', touchStart);
+			canvas.addEventListener('touchmove', touchMove);
+			canvas.addEventListener('touchend', touchEnd);
+
+
+			canvas.width = WIDTH;
+			canvas.height = HEIGHT;
+
+			$('#blur-div').css({
+				width: WIDTH,
+				height: HEIGHT
+			})
+
+			$('.image').css({
+				width: WIDTH,
+				height: HEIGHT
+			})
+
+			$(".reset").css({
+				'left': WIDTH*0.1 + 'px',
+				'bottom': HEIGHT*0.1 + 'px'
+			});
+			$(".show").css({
+				'right':WIDTH*0.1,
+				'bottom': HEIGHT*0.1 + 'px'
+			});
+
+			image.src = '2.jpg';
+			image.onload = function () {
+				initCanvas();
+			}	
+		}
+
+		function touchStart (e) {
+			e.preventDefault();
+			isMouseDown = true;
+			startX = e.touches[0].pageX;
+			startY = e.touches[0].pageY;
+
+			var newClipPoint = winToCanvas(startX, startY);
+
+			var showClip = {
+				x: newClipPoint.x,
+				y: newClipPoint.y,
+				r: showAreaR
+			}
+
+			showArea.push(showClip);
+
+			// 绘制
+			draw();
+		}
+
+		function touchMove (e) {
+			e.preventDefault();
+			if (isMouseDown) {
+
+				endX = e.touches[0].pageX;
+				endY = e.touches[0].pageY;
+
+				var newClipPoint = winToCanvas(endX, endY);
+
+				var showClip = {
+					x: newClipPoint.x,
+					y: newClipPoint.y,
+					r: showAreaR
+				}
+
+				showArea.push(showClip);
+
+				// 绘制
+				draw();
+			}
+		}
+
+		function touchEnd (e) {
+			e.preventDefault();
+			isMouseDown = false;
+		}
+
+		function reset () {
+			showArea = [];
+			clearInterval(timer2);
+			clearInterval(timer);
+			// 点击reset的时候 让半径等于Math.max(canvas.width, canvas.height)
+			clipCircle.x = Math.ceil(Math.random() * (canvas.width-4*r) + 2*r); 	
+			clipCircle.y = Math.ceil(Math.random() * (canvas.height-4*r) + 2*r);
+			clipCircle.r = Math.min(canvas.width, canvas.height);
+			timer2 = setInterval(showClip, 10);
+		}
+
+		function showClip () {
+			clipCircle.r -= 10;
+			// 如果r比50大的情况继续绘制 否则停止
+			draw();
+			if (clipCircle.r <= 50) {
+				clearInterval(timer2);
+			}
+		}
+
+		function show () {
+			clearInterval(timer);
+			clearInterval(timer2);
+			timer = setInterval(showImage, 10);
+		}
+
+		function initCanvas () {
+			// 半径
+			r = 50;
+			// 圆的坐标
+			randX = Math.ceil(Math.random() * (canvas.width-4*r) + 2*r); 		// [2*r, canvas.width-2*r]
+			randY = Math.ceil(Math.random() * (canvas.height-4*r) + 2*r); 		// [2*r, canvas.height-2*r]
+
+			// 圆的信息
+			clipCircle = {x: randX, y: randY, r: r};
+			draw();
+		}
+
+		function renderClip () {
+
+			ctx.beginPath();
+			if (showArea[0]) {
+				// 循环数组
+				// 这里圆的个数超过两个就会连在一起 不知道为什么
+				for (var i = 0; i < showArea.length; i ++) {
+					ctx.arc(showArea[i].x, showArea[i].y, showArea[i].r, 0, Math.PI * 2, false);
+				}
+			}
+			ctx.arc(clipCircle.x, clipCircle.y, clipCircle.r, 0, Math.PI * 2, false);
+			ctx.clip();
+		}
+
+		function draw () {
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+			ctx.save();
+			// 在绘制之前制作一个剪辑区域
+			renderClip();
+			ctx.drawImage(image, 0, 0, image.width, image.height, 0, 0, canvas.width, canvas.height);
+			ctx.restore();
+
+		}
+
+		function showImage () {
+			// 要把剪辑区域一点一点的扩大
+			// r++
+			clipCircle.r += 5;
+			// 宽和高的最大值
+			if (clipCircle.r < Math.max(canvas.width, canvas.height)) {
+				draw();
+			} else {
+				clearInterval(timer);
+			}
+			
+		}
+
+		// 刮刮卡效果
+		canvas.onmousedown = function (e) {
+			e.preventDefault();
+			isMouseDown = true;
+			startX = e.pageX;
+			startY = e.pageY;
+
+			var newClipPoint = winToCanvas(startX, startY);
+
+			var showClip = {
+				x: newClipPoint.x,
+				y: newClipPoint.y,
+				r: showAreaR
+			}
+
+			showArea.push(showClip);
+
+			// 绘制
+			draw();
+
+
+		}
+
+		canvas.onmousemove = function (e) {
+			e.preventDefault();
+			if (isMouseDown) {
+
+				endX = e.pageX;
+				endY = e.pageY;
+
+				var newClipPoint = winToCanvas(endX, endY);
+
+				var showClip = {
+					x: newClipPoint.x,
+					y: newClipPoint.y,
+					r: showAreaR
+				}
+
+				showArea.push(showClip);
+
+				// 绘制
+				draw();
+			}
+		}
+
+		canvas.onmouseup = function (e) {
+			isMouseDown = false;
+			e.preventDefault();
+		}
+
+		canvas.onmouseout = function (e) {
+			isMouseDown = false;
+			e.preventDefault();
+		}
+
+		function winToCanvas (x, y) {
+			var dis = canvas.getBoundingClientRect();
+			return {
+				x: x - dis.left,
+				y: y - dis.top
+			}
+		}
+
+
+	</script>
+</body>
+</html>

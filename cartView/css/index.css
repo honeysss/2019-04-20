@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  height: 100%;
+}
+#app {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.cart-font {
+  position: relative;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.cart-font .left,
+.cart-font .right {
+  position: absolute;
+  width: 45%;
+  top: 16px;
+}
+.cart-font .left {
+  left: 0;
+}
+.cart-font .right {
+  right: 0;
+}
+.cart-font h2 {
+  text-align: center;
+}
+
+.cart-infos {
+  width: 100%;
+  border-bottom: 1px solid grey;
+}
+.cart-tr1 {
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 40px;
+  background-color: #C5BFBF;
+  color: white;
+  font-weight: bold;
+}
+.tr1 {
+  width: 40%;
+  border: none;
+}
+.tr2,
+.tr3,
+.tr4,
+.tr5{
+  width: 15%;
+  border: none;
+}
+.cart-tr2 {
+  height: 150px;
+}
+.product {
+  position: relative;
+  font-size: 14px;
+}
+.selectProduct {
+  position: absolute;
+  top: 40%;
+  left: 10px;
+}
+.image {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 30px;
+  top: 20px;
+}
+.proName {
+  position: absolute;
+  left: 140px;
+  top: 20px;
+}
+.cart-tr2 {
+  position: relative;
+}
+.deliver-div {
+  position: absolute;
+  left: 140px;
+  top: 100px;
+}
+.deliver {
+  margin-right: 10px;
+}
+.deContent {
+  color: gray;
+  margin-right: 5px;
+}
+
+.add,
+.reduce {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  font-size: 14px;
+  text-align: center;
+  line-height: 15px;
+  border: 1px solid rgb(218, 143, 143);
+  vertical-align: -1.5px;
+  cursor: pointer;
+}
+.reduce {
+  margin-left: 30px;
+}
+.num {
+  width: 100px;
+  border: 1px solid gray;
+  margin: 0 10px;
+  text-align: center;
+}
+
+
+.produce-price,
+.total-price,
+.delete-icon {
+ text-align: center;
+}
+.delete-icon {
+  background: url('../img/删除.png') no-repeat center;
+  background-size: 30px;
+  cursor: pointer;
+}
+
+.cart-foot {
+  width: 100%;
+  position: relative;
+  margin-top: 20px;
+}
+.foot-left {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  font-size: 14px;
+}
+#selectAllIcon {
+  vertical-align: -1.5px;
+}
+.selectAll {
+  color: brown;
+  cursor: pointer;
+}
+.disSelect {
+  cursor: pointer;
+}
+
+
+.foot-right {
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+.pay {
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  letter-spacing: 10px;
+  font-weight: bold;
+  margin-left: 20px;
+  background-color: red;
+  border: none;
+  cursor: pointer;
+}
+
+/*删除商品*/
+.delete {
+  z-index: 5;
+  width: 40%;
+  height: 240px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-left: -20%;
+  background-color: white;
+}
+.delete-product-icon {
+  font-size: 30px;
+  color: red;
+  opacity: 0.6;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+.delete-product-icon:hover {
+  opacity: 1;
+  transform: rotate(30deg);
+}
+.delete-info {
+  text-align: center;
+  font-size: 20px;
+  color: red;
+  margin-top: 40px;
+}
+.yes,
+.no {
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 100px;
+  border: none;
+  cursor: pointer;
+}
+.yes {
+  color: red;
+  margin-left: 13%;
+  margin-right: 10%;
+}
+.yes:hover {
+  background-color: red;
+  color: white;
+}
+.no {
+  background-color: red;
+  color: white;
+}
+
+.delete-mask {
+  width: 100%;
+  height: 172%;
+  position: absolute;
+  left: 0;
+  top: -15%;
+  background-color: black;
+  opacity: 0.4;
+  z-index: 2;
+}

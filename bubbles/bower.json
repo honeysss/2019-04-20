@@ -1,0 +1,21 @@
+{
+  "name": "bubble",
+  "version": "0.1.0",
+  "authors": [
+    "honey <907641898@qq.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}

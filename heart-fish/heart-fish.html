@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>heart-fish</title>
+	<style>
+		body {
+			padding-top: 10px;	
+		}
+		.total {
+			width: 800px;
+			height: 600px;
+			margin: 0 auto;
+		}
+		#allCanvas {
+			width: 800px;
+			height: 600px;
+			margin: 0;
+			position: relative;
+		}
+		canvas {
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		#canvas1 {
+			z-index: 1;
+		}
+		#canvas2 {
+			z-index: 0;
+		}
+		#score, #scoreIcon {
+			position: absolute;
+			display: block;
+			width: 200px;
+			text-align: center;
+			z-index: 10;
+			font-size: 30px;
+			font-family: '幼圆';
+			font-weight: bold;
+			color: #efd5d5;
+			left: 50%;
+			margin-left: -100px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="total">
+		<div id="allCanvas">
+			<canvas id="canvas1" width="800" height="600"></canvas>
+			<canvas id="canvas2" width="800" height="600"></canvas>
+		</div>
+	</div>
+
+	<script src="js/index.js"></script>
+	<script src="js/commonFunctions.js"></script>
+	<script src="js/bg.js"></script>
+	<script src="js/ane.js"></script>
+	<script src="js/fruit.js"></script>
+	<script src="js/mom.js"></script>
+	<script src="js/collision.js"></script>
+	<script src="js/baby.js"></script>
+	<script src="js/dust.js"></script>
+	<script src="js/data.js"></script>
+	<script src="js/wave.js"></script>
+	<script src="js/feedWave.js"></script>
+</body>
+</html>

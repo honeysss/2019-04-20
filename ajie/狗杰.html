@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.js"></script>
+		<script type="text/javascript" src="js/scj.js"></script>
+		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+		<!--<script type="text/javascript">
+			var password="";
+			password=prompt("师成杰是一个");
+			if(password!="王八狗！"){
+				alert("no");
+				window.opener=null;
+				window.close();
+			}
+		</script>-->
+		<style>
+			div{z-index: 2;}
+			body{position: relative;font-size: 40px;font-weight: bold;color: blueviolet;}
+			.wo{width: 20px;height: 20px;position: absolute;left: 20px;top: -60px;animation: an_1 3s forwards;}
+			.jue{width: 20px;height: 20px;position: absolute;left: 100px;top: -60px;animation: an_2 3s forwards ;animation-delay: 0.2s;}
+			.de{width: 20px;height: 20px;position: absolute;left: 180px;top: -60px;animation: an_3 3s forwards ;animation-delay: 0.4s;}
+			.shi{width: 20px;height: 20px;position: absolute;left: 260px;top: -60px;animation: an_4 3s forwards ;animation-delay: 0.6s;}
+			.cheng{width: 20px;height: 20px;position: absolute;left:340px;top: -60px;animation: an_5 3s forwards ;animation-delay: 0.8s;}
+			.jie{width: 20px;height: 20px;position: absolute;left: 420px;top: -60px;animation: an_6 3s forwards ;animation-delay: 1s;}
+			.shii{width: 20px;height: 20px;position: absolute;left: 500px;top: -60px;animation: an_7 3s forwards ;animation-delay: 1.2s;}
+			.yi{width: 20px;height: 20px;position: absolute;left: 580px;top: -60px;animation: an_8 3s forwards ;animation-delay: 1.4s;}
+			.ge{width: 20px;height: 20px;position: absolute;left: 660px;top: -60px;animation: an_9 3s forwards ;animation-delay: 1.6s;}
+			.xiao{width: 20px;height: 20px;position: absolute;left: 740px;top: -60px;animation: an_10 3s forwards ;animation-delay: 1.8s;}
+			.ke{width: 20px;height: 20px;position: absolute;left: 820px;top: -60px;animation: an_11 3s forwards ;animation-delay: 2s;}
+			.ai{width: 20px;height: 20px;position: absolute;left:900px;top: -60px;animation: an_12 3s forwards ;animation-delay: 2.2s;}
+			.ya{width: 20px;height: 20px;position: absolute;left: 980px;top: -60px;animation: an_13 3s forwards ;animation-delay: 2.4s;}
+			.xi{width: 20px;height: 20px;position: absolute;left: 1060px;top: -60px;animation: an_14 3s forwards ;animation-delay: 2.6s;}
+			.img_1{display:block; width: 50px;height: 50px;position: absolute;left: 1200px;top: -100px;animation: img_1 4s forwards; animation-delay: 2.25s;z-index: 2;}
+
+			.img_2 {
+				left: 1%;
+				animation: img_2 4s infinite forwards;
+				animation-delay: 1s;
+			}
+
+			.img_3 {
+				left: -2%;
+				animation: img_3 5s infinite forwards;
+				animation-delay: 0.6s;
+			}
+
+			.img_4 {
+				left: 30%;
+				animation: img_4 4s infinite forwards;
+				animation-delay: 1.7s;
+			}
+
+			.img_5 {
+				left: 10%;
+				animation: img_5 4s infinite forwards;
+				animation-delay: 1.8s;
+			}
+
+			.img_6 {
+				left: 50%;
+				animation: img_6 4s infinite forwards;
+				animation-delay: 0.1s;
+			}
+
+			.img_7 {
+				left: 60%;
+				animation: img_7 5s infinite forwards;
+				animation-delay: 0.2s;
+			}
+
+			.img_8 {
+				left: 70%;
+				animation: img_8 5s infinite forwards;
+				animation-delay: 0.5s;
+			}
+
+			.img_9 {
+				left: 80%;
+				animation: img_9 5s infinite forwards;
+				animation-delay: 1.3s;
+			}
+
+			.img_11 {
+				left: 90%;
+				animation: img_10 5s infinite forwards;
+				animation-delay: 1.6s;
+			}
+
+			.img_12 {
+				left: 95%;
+				animation: img_11 4s infinite forwards;
+				animation-delay: 2s;
+			}
+
+			.img_13 {
+				left: 93%;
+				animation: img_12 4s infinite forwards;
+				animation-delay: 2.3s;
+			}
+
+			.img_14 {
+				left: 15%;
+				animation: img_13 5s infinite forwards;
+				animation-delay: 0.4s;
+			}
+
+			.img_15 {
+				left: 35%;
+				animation: img_14 5s infinite forwards;
+				animation-delay: 3.95s;
+			}
+
+			.img_16 {
+				left: 54%;
+				animation: img_15 4s infinite forwards;
+				animation-delay: 2.2s;
+			}
+
+			.img_17 {
+				left: 85%;
+
+				animation: img_16 5s infinite forwards;
+				animation-delay: 1.8s;
+			}
+
+			.img_18 {
+				left: 70%;
+				animation: img_17 5s infinite forwards;
+				animation-delay: 1.7s;
+			}
+
+			.img_19 {
+				left: 40%;
+				animation: img_18 5s infinite forwards;
+				animation-delay: 1s;
+			}
+
+			.img_20 {
+				left: 50%;
+				animation: img_19 5s infinite forwards;
+				animation-delay: 2.8s;
+			}
+
+			.img_21 {
+				left: 57%;
+				animation: img_20 5s infinite forwards;
+				animation-delay: 1.3s;
+			}
+
+			.img_10 {
+				left: 84%;
+				animation: img_21 5s infinite forwards;
+				animation-delay: 3.9s;
+			}
+
+			.img_22 {
+				left: 57%;
+				animation: img_20 5s infinite forwards;
+				animation-delay: 3.7s;
+			}
+
+			.img_23 {
+				left: 57%;
+				animation: img_20 5s infinite forwards;
+				animation-delay: 4.5s;
+			}
+
+			.img_23 {
+				left: 50%;
+				animation: img_20 5s infinite forwards;
+				animation-delay: 2.3s;
+			}
+
+			.img_24 {
+				left: 45%;
+				animation: img_20 5s infinite forwards;
+				animation-delay: 4.9s;
+			}
+
+			.img_25 {
+				left: 48%;
+				animation: img_20 5s infinite forwards;
+				animation-delay: 3.2s;
+			}
+
+			.img_26 {
+				left: 10%;
+				animation: img_20 5s infinite forwards;
+				animation-delay: 3.5s;
+			}
+
+			.img_27 {
+				left: 20%;
+				animation: img_20 5s infinite forwards;
+				animation-delay: 2.7s;
+			}
+
+			.img_28 {
+				left: 30%;
+				animation: img_20 5s infinite forwards;
+				animation-delay: 2.4s;
+			}
+
+			.img_29 {
+				left: 70%;
+				animation: img_20 5s infinite forwards;
+				animation-delay: 2s;
+			}
+
+			.img_30 {
+				left: 20%;
+				animation: img_20 5s infinite forwards;
+				animation-delay: 1.8s;
+			}
+
+			.img_31 {;
+				position: fixed;
+				left: 10%;
+				animation: img_20 5s infinite forwards;
+				animation-delay: 1.7s;
+			}
+
+			.img_32 {
+				left: 93%;
+				animation: img_20 5s infinite forwards;
+				animation-delay: 1.5s;
+			}
+
+			@keyframes img_1 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_2 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_3 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_4 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_5 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_6 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_7 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_8 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_9 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_10 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_11 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_12 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_13 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_14 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_15 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_16 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_17 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_18 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_19 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_20 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_21 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_23 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_24 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_25 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_26 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_27 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_28 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_29 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_30 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_31 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_32 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+			@keyframes img_22 {
+				from {
+					top: -3%;
+				}
+				to {
+					top: 115%;
+				}
+			}
+
+
+			.sha{width: 20px;height: 20px;position: absolute;left: 820px;top: 250px;animation: an_15 4s infinite;animation-timing-function: ease;font-family: 幼圆;animation-direction: alternate;}
+			.bi{width: 20px;height: 20px;position: absolute;left:900px;top: 250px;animation: an_16 4s infinite;animation-timing-function: ease;font-family: 幼圆;animation-direction: alternate;}
+			.xiao1{width: 20px;height: 20px;position: absolute;left: 740px;top: 250px;animation: an_17 4s infinite;animation-timing-function: ease;font-family: 幼圆;animation-direction: alternate;}
+			@keyframes an_15{
+				from{font-size:40px; color: #8A2BE2;}
+				to{font-size: 70px; color: red;margin-top: -10px;margin-left: -10px;}
+			}
+			@keyframes an_16{
+				from{font-size: 40px;color: #8A2BE2;}
+				to{font-size: 70px;color: red;margin-top: -10px;margin-left: -10px;}
+			}
+			@keyframes an_17{
+				from{font-size: 40px;color: #8A2BE2;}
+				to{font-size: 70px;color: red;margin-top: -10px;margin-left: -10px;}
+			}
+		</style>
+		<script type="text/x-jquery-tmpl">
+			
+		</script>
+		<title>ceshi</title>
+	</head>
+	<body>
+		<div class="wo">我</div>
+		<div class="jue">觉</div>
+		<div class="de">得</div>
+		<div class="shi">师</div>
+		<div class="cheng">成</div>
+		<div class="jie">杰</div>
+		<div class="shii">是</div>
+		<div class="yi">一</div>
+		<div class="ge">个</div>
+		<div class="div3 xiao">小</div>
+		<div class="div1 ke">可</div>
+		<div class="div2 ai">爱</div>
+		<div class="ya">呀</div>
+		<div class="xi">~</div>
+		<div class="fallHeart">
+			<img src="img/heart.png" alt="" class="img_2"/>
+			<img src="img/heart.png" alt="" class="img_3"/>
+			<img src="img/heart.png" alt="" class="img_4"/>
+			<img src="img/heart.png" alt="" class="img_5"/>
+			<img src="img/heart.png" alt="" class="img_6"/>
+			<img src="img/heart.png" alt="" class="img_7"/>
+			<img src="img/heart.png" alt="" class="img_8"/>
+			<img src="img/heart.png" alt="" class="img_9"/>
+			<img src="img/heart.png" alt="" class="img_10"/>
+			<img src="img/heart.png" alt="" class="img_11"/>
+			<img src="img/heart.png" alt="" class="img_12"/>
+			<img src="img/heart.png" alt="" class="img_13"/>
+			<img src="img/heart.png" alt="" class="img_14"/>
+			<img src="img/heart.png" alt="" class="img_15"/>
+			<img src="img/heart.png" alt="" class="img_16"/>
+			<img src="img/heart.png" alt="" class="img_17"/>
+			<img src="img/heart.png" alt="" class="img_18"/>
+			<img src="img/heart.png" alt="" class="img_19"/>
+			<img src="img/heart.png" alt="" class="img_20"/>
+			<img src="img/heart.png" alt="" class="img_21"/>
+
+			<img src="img/heart.png" alt="" class="img_22"/>
+			<img src="img/heart.png" alt="" class="img_23"/>
+			<img src="img/heart.png" alt="" class="img_24"/>
+			<img src="img/heart.png" alt="" class="img_25"/>
+			<img src="img/heart.png" alt="" class="img_26"/>
+			<img src="img/heart.png" alt="" class="img_27"/>
+			<img src="img/heart.png" alt="" class="img_28"/>
+			<img src="img/heart.png" alt="" class="img_29"/>
+			<img src="img/heart.png" alt="" class="img_30"/>
+			<img src="img/heart.png" alt="" class="img_31"/>
+			<img src="img/heart.png" alt="" class="img_32"/>
+			<img src="img/heart.png" alt="" class="img_33"/>
+		</div>
+		<script src="js/other.js"></script>
+	</body>
+</html>

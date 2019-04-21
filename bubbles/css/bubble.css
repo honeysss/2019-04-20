@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+body {
+  background-color: pink;
+}
+.font {
+  font-family: "幼圆";
+  font-weight: bold;
+  color: red;
+}
+h1 {
+  text-align: center;
+  margin-top: 100px;
+  font-family: "幼圆";
+  font-weight: bold;
+  color: red;
+}
+.sound {
+  width: 600px;
+  margin: 100px auto;
+}
+.sound .headIcon {
+  border-radius: 50%;
+}
+.sound .sound-content {
+  display: inline-block;
+  position: relative;
+}
+.sound .sound-one {
+  float: left;
+}
+.sound .sound-one svg {
+  left: -165px;
+  bottom: 140px;
+}
+.sound .sound-one svg path {
+  opacity: 0;
+  transform: scale(0.01);
+  transition: opacity 0.3s ease,
+											transform 0.3s ease;
+  transform-origin: right bottom;
+}
+.sound .sound-one svg #path1 {
+  transition-delay: 0;
+}
+.sound .sound-one svg #path2 {
+  transition-delay: 0.1s;
+}
+.sound .sound-one svg #path3 {
+  transition-delay: 0.2s;
+}
+.sound .sound-one svg #path4 {
+  transition-delay: 0.3s;
+}
+.sound .sound-one a:hover .headIcon {
+  box-shadow: 0 0 10px #F01D1D;
+}
+.sound .sound-one a:hover p {
+  transition-delay: 0.3s;
+  opacity: 1;
+  transform: scale(1);
+}
+.sound .sound-one a:hover svg path {
+  opacity: 1;
+  transform: scale(1);
+}
+.sound .sound-two {
+  float: right;
+}
+.sound .sound-two svg {
+  left: -40px;
+  bottom: 170px;
+}
+.sound .sound-two svg polygon {
+  stroke-dasharray: 1500;
+  stroke-dashoffset: -1500;
+  opacity: 0;
+  transition: 1s;
+}
+.sound .sound-two a:hover .headIcon {
+  box-shadow: 0 0 10px #F01D1D;
+}
+.sound .sound-two a:hover p {
+  opacity: 1;
+  transform: scale(1);
+}
+.sound .sound-two a:hover svg polygon {
+  stroke-dashoffset: 0;
+  opacity: 1;
+  transition: stroke-dashoffset 1s ease, opacity 0.3s ease;
+}
+.sound span {
+  margin-left: 25px;
+  font-family: "幼圆";
+  font-weight: bold;
+  color: red;
+}
+.sound p {
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 80px;
+  text-align: center;
+  bottom: 170px;
+  opacity: 0;
+  transition: transform 0.5s ease,
+								 opacity 0.5s ease;
+  transform: scale(0.01);
+  transform-origin: bottom;
+  color: #260808;
+  font-family: "幼圆";
+  font-weight: bol;
+}
+.sound .toolTip-one {
+  left: -125px;
+}
+.sound svg {
+  position: absolute;
+}

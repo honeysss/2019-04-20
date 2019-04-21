@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.js"></script>
+		<style>
+			body{font-family: "微软雅黑";}
+			.all{position: relative;width: 100%;height: 100%;position: fixed;top: 0;left: 0;}
+			.redline{width: 1px;height: 40px;background: red;position: absolute;left: 42%;top: 48%;animation: move_1 5s linear infinite alternate;display: block;z-index: 2;}
+			.left_line{width:40px ;height: 2px;background: lightgrey;position: absolute;left: 42%;top: 50%;}
+			.right_line{width:40px ;height: 2px;background: lightgrey;position: absolute;right: 40.4%;top: 50%;}
+			.middle_1{width: 1.5px;height: 20px;background: darkgrey;position: absolute;left: 45.2%;top: 49.9%;display: block;}
+			.small_1{width: 1.5px;height: 15px;background: darkgrey;position: absolute;left: 45.6%;top: 49.9%;display: block;}
+			.small_2{width: 1.5px;height: 15px;background: darkgrey;position: absolute;left: 46%;top: 49.9%;display: block;}
+			.small_3{width: 1.5px;height: 15px;background: darkgrey;position: absolute;left: 46.4%;top: 49.9%;display: block;}
+			.middle_2{width: 1.5px;height: 20px;background: darkgrey;position: absolute;left: 46.8%;top: 49.9%;display: block;}
+			.small_4{width: 1.5px;height: 15px;background: darkgrey;position: absolute;left: 47.2%;top: 49.9%;display: block;}
+			.small_5{width: 1.5px;height: 15px;background: darkgrey;position: absolute;left: 47.6%;top: 49.9%;display: block;}
+			.small_6{width: 1.5px;height: 15px;background: darkgrey;position: absolute;left: 48%;top: 49.9%;display: block;}
+			.middle_3{width: 1.5px;height: 20px;background: darkgrey;position: absolute;left: 48.4%;top: 49.9%;display: block;}
+			.small_7{width: 1.5px;height: 15px;background: darkgrey;position: absolute;left: 48.8%;top: 49.9%;display: block;animation: move_2 0.6s linear infinite alternate;}
+			.small_8{width: 1.5px;height: 15px;background: darkgrey;position: absolute;left: 49.2%;top: 49.9%;display: block;animation: move_3 0.6s linear  0.1s infinite alternate;}
+			.small_9{width: 1.5px;height: 15px;background: darkgrey;position: absolute;left: 49.6%;top: 49.9%;display: block;animation: move_4 0.6s linear 0.2s infinite alternate;}
+			.middle_4{width: 1.5px;height: 20px;background: darkgrey;position: absolute;left: 50%;top: 49.9%;display: block;animation: move_5 0.6s linear 0.3s infinite alternate;}
+			.small_10{width: 1.5px;height: 15px;background: darkgrey;position: absolute;left: 50.4%;top: 49.9%;display: block;animation: move_6 0.6s linear 0.4s infinite alternate;}
+			.small_11{width: 1.5px;height: 15px;background: darkgrey;position: absolute;left: 50.8%;top: 49.9%;display: block;animation: move_7 0.6s linear 0.5s infinite alternate;}
+			.small_12{width: 1.5px;height: 15px;background: darkgrey;position: absolute;left:  51.2%;top: 49.9%;display: block;animation: move_8 0.6s linear 0.6s infinite alternate;}
+			.middle_5{width: 1.5px;height: 20px;background: darkgrey;position: absolute;left: 51.6%;top: 49.9%;display: block;animation: move_9 0.6s linear 0.7s infinite alternate;}
+			.small_13{width: 1.5px;height: 15px;background: darkgrey;position: absolute;left:52%;top: 49.9%;display: block;animation: move_10 0.6s linear 0.8s infinite alternate;}
+			.small_14{width: 1.5px;height: 15px;background: darkgrey;position: absolute;left:52.4%;top: 49.9%;display: block;animation: move_11 0.6s linear 0.9s infinite alternate;}
+			.small_15{width: 1.5px;height: 15px;background: darkgrey;position: absolute;left: 52.8%;top: 49.9%;display: block;animation: move_12 0.6s linear 1s infinite alternate;}
+			.middle_6{width: 1.5px;height: 20px;background: darkgrey;position: absolute;left: 53.2%;top: 49.9%;display: block;}
+			.small_16{width: 1.5px;height: 15px;background: darkgrey;position: absolute;left:  53.6%;top: 49.9%;display: block;}
+			.small_17{width: 1.5px;height: 15px;background: darkgrey;position: absolute;left: 54%;top: 49.9%;display: block;}
+			.small_18{width: 1px;height: 15px;background: darkgrey;position: absolute;left: 54.4%;top: 49.9%;display: block;}
+			.middle_7{width: 1.5px;height: 20px;background: darkgrey;position: absolute;left: 54.8%;top: 49.9%;display: block;}
+			.small_19{width: 1.5px;height: 15px;background: darkgrey;position: absolute;left: 55.2%;top: 49.9%;display: block;}
+			.small_20{width: 1.5px;height: 15px;background: darkgrey;position: absolute;left: 55.6%;top: 49.9%;display: block;}
+			.small_21{width: 1.5px;height: 15px;background: darkgrey;position: absolute;left: 56%;top: 49.9%;display: block;}
+			.middle_8{width: 1.5px;height: 20px;background: darkgrey;position: absolute;left: 56.4%;top: 49.9%;display: block;}
+			@keyframes move_1{
+				from{left: 42%;}
+				to{left: 59.6%;}
+			}
+			@keyframes move_2{
+				from{height: 15px;}
+				to{height: 30px;}
+			}
+			@keyframes move_3{
+				from{height: 15px;}
+				to{height: 30px;}
+			}
+			@keyframes move_4{
+				from{height: 15px;}
+				to{height: 30px;}
+			}
+			@keyframes move_5{
+				from{height: 20px;}
+				to{height: 35px;}
+			}
+			@keyframes move_6{
+				from{height: 15px;}
+				to{height: 30px;}
+			}
+			@keyframes move_7{
+				from{height: 15px;}
+				to{height: 30px;}
+			}
+			@keyframes move_8{
+				from{height: 15px;}
+				to{height: 30px;}
+			}
+			@keyframes move_9{
+				from{height: 20px;}
+				to{height: 35px;}
+			}
+			@keyframes move_10{
+				from{height: 15px;}
+				to{height: 30px;}
+			}
+			@keyframes move_11{
+				from{height: 15px;}
+				to{height: 30px;}
+			}
+			@keyframes move_12{
+				from{height: 15px;}
+				to{height: 30px;}
+			}
+		</style>
+		<script type="text/javascript">
+			
+		</script>
+		<title>ceshi1</title>
+	</head>
+	<body>
+		<div class="all">
+			<span class="redline"></span>
+			<div class="left_line"></div>
+			<span class="middle_1"></span>
+			<span class="small_1"></span>
+			<span class="small_2"></span>
+			<span class="small_3"></span>
+			<span class="middle_2"></span>
+			<span class="small_4"></span>
+			<span class="small_5"></span>
+			<span class="small_6"></span>
+			<span class="middle_3"></span>
+			<span class="small_7"></span>
+			<span class="small_8"></span>
+			<span class="small_9"></span>
+			<span class="middle_4"></span>
+			<span class="small_10"></span>
+			<span class="small_11"></span>
+			<span class="small_12"></span>
+			<span class="middle_5"></span>
+			<span class="small_13"></span>
+			<span class="small_14"></span>
+			<span class="small_15"></span>
+			<span class="middle_6"></span>
+			<span class="small_16"></span>
+			<span class="small_17"></span>
+			<span class="small_18"></span>
+			<span class="middle_7"></span>
+			<span class="small_19"></span>
+			<span class="small_20"></span>
+			<span class="small_21"></span>
+			<span class="middle_8"></span>
+			<div class="right_line"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>address</title>
+	<link rel="stylesheet" href="css/address.css" />
+</head>
+<body>
+	<div id="address">
+
+		<div class="top">
+			<ul class="progress">
+				<li :class="{active: progress}">地址确认<span></span></li>
+				<li>查看订单<span></span></li>
+				<li>支付<span class="dotted-three"></span></li>
+				<li>订单确认<span></span></li>
+			</ul>
+		</div>
+
+
+		<div class="middle">
+
+			<div class="middle-top">
+				 <div class="cart-font">
+		      <hr class="left">
+		      <h3>配送地址</h3>
+		      <hr class="right">
+		   	 </div>
+			</div>
+
+			<div class="middle-content">
+				<div class="list">
+					<ul>
+						<li v-for="(items, index) in addressBackUp"
+							:key="index" :class="{'active' : index === selectIndex}"
+							@click="liClick(index)" 
+							>
+							<span class="name">{{items.userName}}</span>
+							<span class="address">{{items.streetName}}</span>
+							<span class="tel">{{items.tel}}</span>
+							<!-- 选中并且是默认地址的情况下显示 -->
+							<span class="default" v-show="items.isDefault && items.isSelected" >默认地址</span>
+							<!-- 选中并且不是默认地址的情况下显示 -->
+							<span class="default" v-show="items.isSelected && !items.isDefault" @click="defaultChange(items)">设为默认地址</span>
+							<span class="edit" v-show="items.isSelected" @click="editClick(items)"></span>
+							<span class="deleteAddress" v-show="items.isSelected" @click="deleteAdd(items)"></span>
+						</li>
+						<li class="add" @click="addAddress()">
+							<span>添加新地址</span>
+						</li>
+					</ul>
+				</div>
+
+				<div class="clear"></div>
+
+				<div class="more" v-show="more" @click="moreData">
+					<span class="more-font">more</span>
+					<span class="more-icon">></span>
+				</div>
+
+				<div class="less" v-show="less" @click="lessData">
+					<span class="less-font">less</span>
+					<span class="less-icon">></span>
+				</div> 
+			</div>
+		</div>
+
+		<!-- 用clear:both清浮动 撑开高度 -->
+		<div class="clear"></div>
+
+		<div class="footer">
+			<div class="cart-font">
+	      <hr class="left">
+	      <h3>配送方式</h3>
+	      <hr class="right">
+	   	</div>
+		</div>
+
+		<div class="deliver-methods">
+			<p class="standard" :class="{active : deliverStandard }" @click="standard()">
+				<span class="top">标准配送</span>
+				<span class="money">Free</span>
+			</p>
+
+			<p class="higher" :class="{active : deliverHigher }" @click="higher()">
+				<span class="top">高级配送</span>
+				<span class="money">100</span>
+			</p>
+		</div>
+
+		 <!-- 删除地址 -->
+    <div class="delete" v-show="deleteShow">
+      <span class="delete-product-icon" @click="maskShow=false,deleteShow = false">&times;</span>
+      <p class="delete-info">您确定要删除该商品吗?</p>
+      <button class="yes" @click="confirmDelete">是</button>
+      <button class="no" @click="maskShow=false,deleteShow = false">否</button>
+    </div>
+
+		<!-- 编辑地址 -->
+		<div class="editAddress" v-show="editShow">
+			<span class="delete-product-icon" @click="editDismiss">&times;</span>
+			<p class="edit-info">编辑地址</p>
+			<label for="editName">姓名:</label>
+			<input type="text" id="editName" v-model="addItems.userName"/>
+
+			<label for="editAdd">地址:</label>
+			<input type="text" id="editAdd" v-model="addItems.streetName" />
+
+			<label for="editTel">电话:</label>
+			<input type="text" id="editTel" v-model="addItems.tel"/>
+
+			<button class="yes" @click="confirmEdit">确定</button>
+			<button class="no"  @click="editDismiss">取消</button>
+
+		</div>
+
+
+		<!-- 添加地址 -->
+		<div class="editAddress addAddress" v-show="addShow">
+			<span class="delete-product-icon" @click="addAddressDismiss">&times;</span>
+			<p class="edit-info">添加地址</p>
+			<label for="editName">姓名:</label>
+			<input type="text" id="editName" v-model="userName"/>
+
+			<label for="editAdd">地址:</label>
+			<input type="text" id="editAdd" v-model="streetName" />
+
+			<label for="editTel">电话:</label>
+			<input type="text" id="editTel" v-model="tel" />
+
+			<button class="yes" @click="confirmAdd">确定</button>
+			<button class="no" @click="addAddressDismiss">取消</button>
+
+		</div>
+
+  <div class="delete-mask" v-show="maskShow"></div>
+	
+	</div>
+
+
+  <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+  <script src="js/address.js"></script>
+</body>
+</html>

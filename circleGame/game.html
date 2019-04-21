@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>balabala</title>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	body {
+		position: relative;
+	}
+	
+	#box {
+		position: absolute;
+		width: 800px;
+		height: 400px;
+		left: 50%;
+		margin-left: -400px;
+		margin-top: 35px;
+		border-radius: 10px;
+		border: 3px dotted pink;
+	}
+	
+	#box span {
+		display: inline-block;
+		position: absolute;
+		transform: rotate(-5deg);
+	}
+	#circle {
+		width: 60px;
+		height: 60px;
+		background-color: orange;
+		border-radius: 50%;
+	}
+	#eye {
+		width: 5px;
+		height: 5px;
+		border-radius: 50%;
+		background-color: red;
+	}
+	#trangle {
+		width: 0;
+		height: 0;
+		border: 20px solid transparent;
+		/* border-left: 20px solid orange; */
+		border-right: 30px solid white;
+		/* border-top: 20px solid red;
+		border-bottom: 20px solid pink; */
+	}
+	#food {
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		background-color: #a81444;
+		border-radius: 50%;
+		position: absolute;
+		/*左  400-1130*/
+		/*top 130-470*/
+	}
+	#score {
+		font-size: 20px;
+		font-weight: bold;
+		font-family: "幼圆";
+		text-align: center;
+		margin-top: 40px;
+		color: gray;
+		height: 40px;
+	}
+	#scoreNum {
+		display: inline-block;
+		position: absolute;
+		top: 2px;
+		font-style: italic;
+		color: #9b4453;
+	}
+</style>
+</head>
+<body>
+	<div id="score">score:&nbsp;&nbsp;<p id="scoreNum">0</p></div>
+	<div id="box">
+		<span id="circle"></span>
+		<span id="eye"></span>
+		<span id="trangle"></span>
+		<div id="food"></div>
+	</div>
+	
+	<script src="js/game.js"></script>
+</body>
+</html>

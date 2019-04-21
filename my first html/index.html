@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>zhuye</title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/main.css" />
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/jquery-1.11.3.min.js"></script>
+	</head>
+	<body  onload="playmusic()">
+		<audio class="audio_1">
+			<source src="img/好想你.mp3" type="audio/mp3"></source>
+		</audio>
+		<!-- <div class="loading">
+			<div class="image">
+				<i></i>
+				<i></i>
+				<i></i>
+				<i></i>
+				<i></i>
+			</div>
+		</div> -->
+		<!-- <div class="loading">
+			<div class="progress_content"></div>
+		</div> -->
+		<div class="loading">
+			<div class="loading_content">
+				<span></span>
+				<p>0%</p>
+			</div>
+		</div>
+		<div class="float_nav">
+			<div class="float_nav_1">
+				<a href="#find" title=""><span class="img"></span></a>
+				<a href="#find" title="" class="font">找网址</a>
+			</div>
+			<div class="fo"></div>
+			<div class="float_nav_2">
+				<div class="float_nav_2_top">
+					<a href="#read" title=""><span class="img"></span></a>
+					<a href="#read" title="" class="font">读新闻</a>
+				</div>
+				<div class="float_nav_2_middle">
+					<a href="javascript:;" title=""><img src="img/图片合并.png"></a>
+				</div>
+				<div class="float_nav_2_bo">
+					<a href="javascript:;" title="" class="font"><span>baby</span>伴舞旧照</a>
+				</div>
+			</div>
+			<div class="fo"></div>
+			<div class="float_nav_3">
+				<a href="#look" title=""><span class="img"></span></a>
+				<a href="#look" title="" class="font">看图片</a>
+			</div>
+			<div class="fo"></div>
+			<div class="float_nav_4">
+				<a href="javascript:;" title=""><span class="img"></span></a>
+				<a href="javascript:;" title="" class="font">超实惠</a>
+			</div>
+			<div class="fo"></div>
+			<div class="float_nav_5">
+				<a href="javascript:;" title=""><span class="img"></span></a>
+				<a href="javascript:;" title="" class="font">玩游戏</a>
+			</div>
+			<div class="fo"></div>
+			<div class="float_nav_6">
+				<a href="#go" title="" id="back_goo"><span class="img"></span></a>
+				<a href="#go" title="" class="font" id="back_go">去底部</a>
+			</div>
+		</div>
+		<div class="header" id="back">
+			<div class="leftarea">
+				<a href="http://www.firefox.com.cn/?igfox" target="_blank" title="火狐官网" class="huohutupian"> <img src="img/上.png" alt="" /></a>
+			</div>
+			<div class="leftarea">
+				<h2>火狐主页</h2>
+			</div>
+			<div class="kuai leftarea">
+				<a href="javascript:;" title="点击查看详情">
+					<span class="shiii" ">
+						<script type="text/javascript">
+							var time=new Date();
+							var a=time.getMonth();
+							var b=time.getDate();
+							document.write(a+1+"月"+b+"日");
+						</script>
+					</span>
+					<span class="yii" ">
+						<script type="text/javascript">
+							var time=new Date();
+							var a=time.getDay();
+							var weekday=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+							document.write(weekday[a]);
+						</script>
+					</span>
+					<span class="shii">
+						<b>长春市
+						<script type="text/javascript">
+							document.write(remote_ip_info.province+"市");
+						</script>
+						</b>
+					</span>
+					<span class="shii">多云</span>
+					<span class="yi">15℃~2℃</span>
+					<span class="shii">星座运势</span>
+					<img src="img/图标.png" alt="" class="shang" />
+				</a>
+			</div>
+			<div class="rightarea_d">
+				<ul>
+					<li><a href="http://doc.firefoxchina.cn/document/feedback/" title="意见反馈"><span>意见反馈</span></a></li>
+					<li class="modify"><a href="javascript:;" class="chageskin"><span class="huan">换肤</span><img src="img/图标.png" /></a></li>
+					<li class="set"><a href="javascript:;"><p class="deng1">设置</p><img src="img/图标.png" /></a></li>
+					<li class="visit"><a href="javascript:;"><p class="deng2">访问记录</p><img src="img/图标.png" /></a></li>
+					<li><a href="https://accounts.firefox.com.cn/oauth/signin?client_id=38c2b6abdacc399e&redirect_uri=https%3A%2F%2Faccount.firefoxchina.cn%2F&scope=profile&state=dd49e0cb5bba9d2f4b376296c12d71f5"><span class="deng">登录</span></a></li>
+					<li><a href="javascript:;" class="ban"><img src="img/huo.png"/><span>火狐移动版</span></a></li>
+				</ul>		
+			</div>
+		</div>
+		<div class="xia ">
+			<a href="javascript:; " title="点击查看详情 "><img src="img/下.png " alt=" "></a>
+		</div>
+		<div class="change_list">
+			<div class="change_list_0">
+				<div class="change_list_top_1">
+					<div class="change_list_1 leftarea">
+						<div><a href="javascript:;" title=""><img src="img/主题.png" alt=""  class="change_list_img active"/></a></div>
+						<div class="change_list_choice">
+							<input type="radio" class="single" checked="checked"/><span>默认皮肤</span>
+						</div>
+					</div>
+					<div class="change_list_1 leftarea">
+						<div><a href="javascript:;" title=""><img src="img/主题.png" alt=""  class="change_list_img "/></a></div>
+						<div class="change_list_choice">
+							<input type="radio" class="single" /><span>默认皮肤</span>
+						</div>
+					</div>
+					<div class="change_list_1 leftarea">
+						<div><a href="javascript:;" title=""><img src="img/主题.png" alt=""  class="change_list_img "/></a></div>
+						<div class="change_list_choice">
+							<input type="radio" class="single" /><span>默认皮肤</span>
+						</div>
+					</div>
+					<div class="change_list_1 leftarea">
+						<div><a href="javascript:;" title=""><img src="img/主题.png" alt=""  class="change_list_img" /></a></div>
+						<div class="change_list_choice">
+							<input type="radio" class="single" /><span>默认皮肤</span>
+						</div>
+					</div>
+					<div class="change_list_1 leftarea">
+						<div><a href="javascript:;" title=""><img src="img/主题.png" alt=""  class="change_list_img "/></a></div>
+						<div class="change_list_choice">
+							<input type="radio" class="single" /><span>默认皮肤</span>
+						</div>
+					</div>
+					<div class="change_list_1 leftarea">
+						<div><a href="javascript:;" title=""><img src="img/主题.png" alt=""  class="change_list_img "/></a></div>
+						<div class="change_list_choice">
+							<input type="radio" class="single" /><span>默认皮肤</span>
+						</div>
+					</div>
+				</div>
+				<div class="change_list_top_2">
+					<div class="change_list_1 leftarea">
+						<div><a href="javascript:;" title=""><img src="img/主题.png" alt=""  class="change_list_img"/></a></div>
+						<div class="change_list_choice">
+							<input type="radio" class="single" checked="checked"/><span>默认皮肤</span>
+						</div>
+					</div>
+					<div class="change_list_1 leftarea">
+						<div><a href="javascript:;" title=""><img src="img/主题.png" alt=""  class="change_list_img "/></a></div>
+						<div class="change_list_choice">
+							<input type="radio" class="single" /><span>默认皮肤</span>
+						</div>
+					</div>
+					<div class="change_list_1 leftarea">
+						<div><a href="javascript:;" title=""><img src="img/主题.png" alt=""  class="change_list_img "/></a></div>
+						<div class="change_list_choice">
+							<input type="radio" class="single" /><span>默认皮肤</span>
+						</div>
+					</div>
+					<div class="change_list_1 leftarea">
+						<div><a href="javascript:;" title=""><img src="img/主题.png" alt=""  class="change_list_img" /></a></div>
+						<div class="change_list_choice">
+							<input type="radio" class="single" /><span>默认皮肤</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="change_list_bot">
+				<div class="change_list_bot_left">
+					<div class="leftareabo">
+						<a href="javascript:;" title=""><span class="change_list_bot_certin">确认</span></a>
+					</div>
+					<a href="javascript:;" title=""><span class="change_list_bot_cancle">取消</span></a>
+				</div>
+				<div class="change_list_bot_right rightarea">
+					<a href="javascript:;" title=""><span class="turnleft active"><</span></a>
+					<span class="turnnum">1/2</span>
+					<a href="javascript:;" title=""><span class="turnright">></span></a>
+				</div>
+			</div>
+		</div>
+		<div class="public ">
+			<div class="public_top ">
+				我在
+				<b>北京</b>
+				<span>[切换]</span>
+				<a href=" " title=" ">农历二月十七</a>
+			</div>
+			<div class="public_sec ">
+				<ul class="first_ul ">
+					<li class="first_li ">今天</li>
+					<li class="sec_li "><img src="img/天气.png "></li>
+					<li class="thi_li ">多云</li>
+					<li class="fo_li ">26℃~11℃</li>
+				</ul>
+				<ul class="sec_ul ">
+					<li class="first_li ">明天</li>
+					<li class="sec_li "><img src="img/天气.png "></li>
+					<li class="thi_li ">多云</li>
+					<li class="fo_li ">26℃~11℃</li>
+				</ul>
+				<ul class="thi_ul ">
+					<li class="first_li ">后天</li>
+					<li class="sec_li "><img src="img/天气.png "></li>
+					<li class="thi_li ">阴</li>
+					<li class="fo_li ">26℃~11℃</li>
+				</ul>
+				<span class="clearfix rightarea ">来源：<a href=" " title=" ">天气通</a></span>
+			</div>
+			<div class="public_thi ">
+				<div class="public_thi_fir ">
+					<span class="zheng "><img src="img/图标.png " alt" " class="img_1 "/><b>整体运势指数</b></span>
+					<span class="xingzuo">
+						我的星座
+						<span>
+							<img src="img/图标.png " alt" " class="img_2 "/>
+							<b>白羊座</b>
+							<img src="img/图标.png " alt=" " class="img_3 "/>
+						</span>
+						<select class="select ">
+							<option value="0 ">白羊座</option>
+							<option value="1 ">金牛座</option>
+							<option value="2 ">双子座</option>
+							<option value="3 ">巨蟹座</option>
+							<option value="4 ">狮子座</option> 
+							<option value="5 ">处女座</option>
+							<option value="6 ">天秤座</option> 
+							<option value="7 ">天蝎座</option>
+							<option value="8 ">射手座</option>
+							<option value="9 ">魔羯座</option>
+							<option value="10 ">水瓶座</option> 
+							<option value="11 ">双鱼座</option>
+						</select>
+					</span>
+				</div>
+				<div class="public_thi_sec ">
+					<span class="zheng "><img src="img/图标.png " alt" " class="img_1 "/><b>今日运气解析</b></span>
+				</div>
+				<p>今天有机会接触企业高层领导，不要畏畏缩缩，大胆有主见的表现反而会赢得领导的赏识。单身者有机缘认识事业上较有成就的异性，很容易被对方吸引；恋爱中的人一起参加户外活动，有助于增进彼此的感情。</p>
+			</div>
+			<div class="public_fo ">
+				<div class="public_fo_first ">
+					<span class="zheng "><img src="img/图标.png " alt" " class="img_1 "/><b>今日开运</b></span>
+				</div>
+				<ul class="public_fo_ul ">
+					<li>幸运数字：8</li>
+					<li>贵人星座：射手座</li>
+					<li>吉时吉色：pm:2:00--4:00</li>
+				</ul>
+				<ul>
+					<li>幸运颜色：石榴红</li>
+					<li>开运方位：西南方向</li>
+				</ul>
+				<span class="clearfix rightarea ">来源：<a href=" " title=" ">科技紫微星座网</a></span>
+			</div>
+	</div>
+		<div class="shijiu clearfix "></div>
+		<div class="sectop ">
+			<div class="baidu_img ">
+				<a href=" " title="百度 "><img src="img/百度.png " alt=" "/></a>
+			</div>
+			<div class="middle ">
+				<div class="wangye ">					
+					<a href=" " title=" " ><span class="active ">网页</span></a>
+					<a href=" " title=" " class=" "><span>新闻</span></a>
+					<a href=" " title=" " class=" "><span>地图</span></a>
+					<a href=" " title=" " class=" "><span>视频</span></a>
+					<a href=" " title=" " class=" "><span>图片</span></a>
+					<a href=" " title=" " class=" "><span>音乐</span></a>
+					<a href=" " title=" " class=" "><span>购物</span></a>
+					<a href=" " title=" " class=" "><span>知道</span></a>			
+				</div>			
+				<div class="button_text " id="find">
+					<div class="left ">
+                      <input type="text " class="text_content "/>		
+                      <a href=" " title=" "><i></i></a>
+					</div>
+					<div class="leftarea ">
+						<span class="search_img"></span>
+					</div>
+				</div>	
+				<div class="mayi clearfix ">				
+					<a href="https://i.g-fox.cn/search1?engine=baidu_web&q=%E8%9A%82%E8%9A%81%E5%9F%BA%E9%87%91%E8%BF%9D%E8%A7%84%E9%94%80%E5%94%AE&from=SE_COperation3_swh78q1f " title="蚂蚁基金违规销售 "><span>蚂蚁基金违规销售</span></a>
+					<a href="https://i.g-fox.cn/search1?engine=baidu_web&q=%E9%AB%98%E6%A0%A1%E4%B8%A5%E6%9F%A5%E7%94%B7%E5%A5%B3%E4%BA%A4%E5%BE%80&from=SE_COperation3_swh78q1f " title="高校严查男女交往 "><span>高校严查男女交往</span></a>
+					<a href="https://i.g-fox.cn/search1?engine=baidu_web&q=%E5%8A%A0%E5%A4%9A%E5%AE%9D%E6%80%BB%E8%A3%81%E8%A2%AB%E8%A7%A3%E8%81%8C&from=SE_COperation3_swh78q1f " title="加多宝总裁被解职 "><span>加多宝总裁被解职</span></a>
+					<a href="https://i.g-fox.cn/search1?engine=baidu_web&q=%E8%90%A7%E4%BA%9A%E8%BD%A9%E6%9B%9D%E6%82%A3%E7%97%85%E5%A4%B1%E5%A3%B0&from=SE_COperation3_swh78q1f " title="萧亚轩曝患病失声 "><span>萧亚轩曝患病失声</span></a>
+					<a href="https://i.g-fox.cn/search1?engine=baidu_web&q=%E6%9C%B1%E6%AD%A3%E5%BB%B7%E9%81%AD%E4%BA%BA%E8%BA%AB%E6%94%BB%E5%87%BB&from=SE_COperation3_swh78q1f " title="朱正廷遭人身攻击 "><span class="zhu">朱正廷遭人身攻击</span></a>
+				</div>
+			</div>
+			<div class="rightarea_m ">
+				<div class="ms ">
+					<p><a href=" " title="点击换一换 "><img src="img/jiantou1.png " alt=" " class="change "/></a><a href="//mini.eastday.com/a/180320223716453.html?qid=qid01645 " title="幽默段子：老板来碗牛肉面，牛肉多加点！我还单身，不用替我省钱 ">幽默段子：老板来碗...</a></p>					
+				</div>
+				<div class="mx ">
+					<p><a href=" " title="点击登录邮箱 "><img src="img/youxiang.png " alt=" " class="click "/><i class="lu ">点击登录</i></a><a href="https://s.click.taobao.com/t?e=m%3D2%26s%3DdAvdJ1KJ9V0cQipKwQzePCperVdZeJviK7Vc7tFgwiFRAdhuF14FMZeEA03xX5J5J1gyddu7kN9oVxuUFnM6iMUjUj9sJ%2FOjDSD6DFJbUQQjBOoHf6%2FsMY7LAa3DUrM2zt5vEinufIVAFEHVckI7b%2BAxILj%2BrCAE%2FmmZgXiuTYXwdM%2FKpa7%2Fo9%2FbxYE2gOLfNfFny4grbOKdzyyO9CIkVdQc6rs1qJwrxg5p7bh%2BFbQ%3D " title="1元抢好货！手慢无 " class="active ">1元抢好货！手慢无</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="header_nav leftarea ">
+			<div class="header_nav_content ">
+				<a href=" " title=" "><img src="img/百度.png " alt=" " class="header_nav_content_img1 "/></a>
+				<input type="text " class="header_nav_content_input " />
+				<a href=" " title=" "><img src="img/search.png " alt=" " class="header_nav_content_img2 " /></a>
+			</div>
+		</div>
+		<div class="shiwu clearfix "></div>
+		<div class="jingdong ">
+			<a href=" " title="京东 "><img src="img/jingdong.png " alt=" "/></a>
+			<span class="disad ">×</span>
+		</div>
+		<div class="shiwu clearfix "></div>
+		<div class="content">
+			<div class="content_top ">
+				<div class="zuo ">
+				<div class="zuo_top ">
+				<ul>
+					<li><a href=" " title="百度 ">百度</a></li>
+					<li><a href=" " title="火狐移动联盟 ">火狐移动联盟</a></li>
+				</ul>
+				<ul class="down_list ">
+					<li onmouseover="show(this) " onmouseout="hide(this) "><a href=" " title="新浪 ">新浪<img src="img/箭头.png " alt=" "/></a>
+						<ul class="list ">
+							<li><a href=" " title="新浪新闻 " class="list_con ">新浪新闻</a></li>
+							<li><a href=" " title="新浪体育 " class="list_con ">新浪体育</a></li>
+							<li><a href=" " title="新浪财经 " class="list_con ">新浪财经</a></li>
+							<li><a href=" " title="新浪军事 " class="list_con ">新浪军事</a></li>
+						</ul>
+					</li>
+					<li><a href=" " title="知乎 ">知乎</a></li>
+				</ul>
+				<ul>
+					<li><a href=" " title="微博 ">微博</a></li>
+					<li><a href=" " title="爱奇艺 ">爱奇艺</a></li>
+				</ul>
+				<ul class="down_list ">
+					<li onmouseover="show(this) " onmouseout="hide(this) "><a href=" " title="腾讯 ">腾讯<img src="img/箭头.png " alt=" "/></a>
+						<ul class="list ">
+							<li><span><a href=" " title="腾讯视频 " class="list_con ">腾讯视频</a></span></li>
+							<li><span><a href=" " title="网页微信 " class="list_con ">网页微信</a></span></li>
+							<li><a href=" " title="QQ空间 " class="list_con ">QQ空间</a></li>
+							<li><a href=" " title="软件中心 " class="list_con ">软件中心</a></li>
+						</ul>
+					</li>
+					<li><a href=" " title="知乎 ">知乎</a></li>
+				</ul>
+				<ul>
+					<li><a href=" " title="网易 ">网易</a></li>
+					<li><a href=" " title="汽车之家 ">汽车之家</a></li>
+				</ul>
+				<ul>
+					<li><a href=" " title="凤凰网 ">凤凰网</a></li>
+					<li><a href=" " title="瓜子二手车 ">瓜子二手车</a></li>
+				</ul>
+				<ul>
+					<li><a href=" " title="搜狐网 ">搜狐网</a></li>
+					<li><a href=" " title="头条新闻 ">头条新闻</a></li>
+				</ul>
+				</div>
+				<div class="dashed clearfix "></div>
+				<div class="zuo_bottom ">
+				<ul>
+					<li><a href=" " title="携程 ">百度</a><a href=" " title="机票 "><img src="img/point.png " alt=" "/>百度</a></li>
+					<li><a href=" " title="天猫超市 ">天猫超市</a></li>
+					<li><a href=" " title="途牛旅行网 ">途牛旅行网</a></li>
+					<li><a href=" " title="唯品会 ">唯品会</a></li>
+					<li><a href=" " title="酒仙网 ">酒仙网</a></li>					
+				</ul>
+				<ul>
+					<li><a href=" " title="天猫精选 "><img src="img/天猫.png "/>天猫精选</a></li>
+					<li><a href=" " title="淘宝特卖 ">淘宝特卖</a></li>
+					<li><a href=" " title="聚划算 ">聚划算</a></li>
+					<li><a href=" " title="驴妈妈旅游 ">驴妈妈旅游</a></li>
+					<li><a href=" " title="华为商城 ">华为商城</a></li>	
+				</ul>
+				<ul>
+					<li><a href=" " title="人人贷理财 ">人人贷理财</a></li>
+					<li><a href=" " title="1号店 ">1号店</a></li>
+					<li><a href=" " title="爱淘宝 ">爱淘宝</a></li>
+					<li><a href=" " title="网易考拉 ">网易考拉</a></li>
+					<li><a href=" " title="网易严选 ">网易严选</a></li>	
+				</ul>
+				<ul>
+					<li><a href=" " title="亚马逊（美国 ">亚马逊</a></li>
+					<li><a href=" " title="亚马逊 ">亚马逊</a></li>
+					<li><a href=" " title="澳洲PO药房 ">百度</a></li>
+					<li><a href=" " title="NIKE官网 ">火狐移动联盟</a></li>
+					<li><a href=" " title="当当网 ">火狐移动联盟</a></li>	
+				</ul>
+				<ul>
+					<li><a href=" " title="网易 ">网易</a></li>
+					<li><a href=" " title="汽车之家 ">汽车之家</a></li>
+					<li><a href=" " title="百度 ">百度</a></li>
+					<li><a href=" " title="火狐移动联盟 ">火狐移动联盟</a></li>
+					<li><a href=" " title="火狐移动联盟 ">火狐移动联盟</a></li>	
+				</ul>
+				<ul>
+					<li><a href=" " title="凤凰网 ">凤凰网</a></li>
+					<li><a href=" " title="瓜子二手车 ">瓜子二手车</a></li>
+					<li><a href=" " title="百度 ">百度</a></li>
+					<li><a href=" " title="火狐移动联盟 ">火狐移动联盟</a></li>
+					<li><a href=" " title="火狐移动联盟 ">火狐移动联盟</a></li>	
+				</ul>
+				<ul>
+					<li><a href=" " title="搜狐网 ">搜狐网</a></li>
+					<li><a href=" " title="头条新闻 ">头条新闻</a></li>
+					<li><a href=" " title="百度 ">百度</a></li>
+					<li><a href=" " title="火狐移动联盟 ">火狐移动联盟</a></li>
+					<li><a href=" " title="火狐移动联盟 ">火狐移动联盟</a></li>	
+				</ul>
+				</div>
+			</div>
+			<div class="you ">
+				<div class="you_top ">
+					<a href=" " title="特品特惠：新品 奇葩 特价 "><img src="img/bg.png " alt=" "/></a>
+				</div>
+				<div class="xm">
+					<ul class="xm_ul">
+						<li id="xm_content_1">
+							<div class="banner">
+								<ul class="img_box">
+									<li class="img_box_1"><a href=" " title="戴墨镜的人 真的惹不起 " ><img src="img/熊猫.png "/></a></li>
+									<li class="img_box_2"><a href=" " title="戴墨镜的人 真的惹不起 " ><img src="img/fox.png "/></a></li>
+								</ul>
+								<div class="banner_bo ">
+									<a href="javascript:; " title=" " class="a_one active1"></a>
+									<a href="javascript:; " title=" " class="a_two "></a>
+								</div>
+							</div>
+							<a href=" " title="戴墨镜的人 真的惹不起 " ><p class="xm_content_p_1">戴墨镜的人&nbsp;<span>真的惹不起！</span></p></a>
+						</li>
+						<li id="xm_content_2">
+							<div class="banner ">
+								<a href=" " title="刘晓庆 " ><img src="img/lxq.png" class="banner_lxq"/></a>
+							</div>
+							<a href=" " title="刘晓庆 " ><p class="xm_content_p_2">刘晓庆巴拉巴拉</p></a>
+						</li>
+						<!--<li id="xm_content_3">
+							<div class="banner ">
+								<a href=" " title="刘晓庆 " ><img src="img/dq.png" class="banner_lxq"/></a>
+							</div>
+							<a href=" " title="刘晓庆 " ><p class="xm_content_p_2">董卿</p></a>
+						</li>-->
+						
+					</ul>
+				</div>
+				<div class="you_bot ">
+					<ul>
+						<li><img src="img/redpoint.png " alt=" "><a href=" " title="Tom Ford| 全世界公认最性感的设计师！ ">Tom Ford| 全世界公认最性感的设计师！</a></li>
+						<li><img src="img/redpoint.png " alt=" "><a href=" " title="好东西| 这不是一把伞，这是一个世界！ ">好东西| 这不是一把伞，这是一个世界！</a></li>
+						<li><img src="img/redpoint.png " alt=" "><a href=" " title="网络热词| 杠精直男癌圣女婊到底啥意思 ">网络热词| 杠精直男癌圣女婊到底啥意思</a></li>
+						<li><img src="img/redpoint.png " alt=" "><a href=" " title="丢脸| 香奈儿砍掉百年老树，只为了这个秀场 ">丢脸| 香奈儿砍掉百年老树，只为了这个秀场</a></li>
+						<li><img src="img/redpoint.png " alt=" "><a href=" " title="京东商城 " class="green ">京东商城</a>&nbsp;&nbsp;&nbsp;<a href=" " title="当当百万图书每满100减50 " class="green ">当当百万图书每满100减50</a></li>
+					</ul>
+				</div>
+			</div>
+			</div>
+			<div class="content_sec ">
+				<div class="mobile leftarea ">
+					<a href=" " title="火狐移动联盟是一个APP、公众号、小程序、头条号、网上商店、手机网站等移动产品的免费展示和自由推广平台。 "><p>移动联盟</p></a>
+				</div>
+				<div class="icon ">
+				<ul class="erweimadisplay1 ">
+					<li><a href=" " title=" "><img src="img/复玩.png "></a></li>
+					<li><a href=" " title=" ">共享饰品</a></li>
+					<div class="erweima1 ">
+						<div class="erweima_top ">
+							<a href=" " title=" "><img src="img/二维码.png " alt=" " class="erweima_img "/></a>
+						</div>
+						<div class="erweima_bot ">
+							<a href=" " title=" "><span>手机扫描获取</span></a>
+						</div>
+					</div>
+				</ul>
+				<ul class="erweimadisplay2 ">
+					<li><a href=" " title=" "><img src="img/复玩.png " alt=" "/></a></li>
+					<li><a href=" " title=" ">携程旅游</a></li>
+					<div class="erweima2 ">
+						<div class="erweima_top ">
+							<a href=" " title=" "><img src="img/二维码.png " alt=" " class="erweima_img "/></a>
+						</div>
+						<div class="erweima_bot ">
+							<a href=" " title=" "><span>手机扫描获取</span></a>
+						</div>
+					</div>
+				</ul>
+				<ul class="erweimadisplay3 ">
+					<li><a href=" " title=" "><img src="img/携程.png " alt=" "/></a></li>
+					<li><a href=" " title=" ">爱奇艺</a></li>
+					<div class="erweima3 ">
+						<div class="erweima_top ">
+							<a href=" " title=" "><img src="img/二维码.png " alt=" " class="erweima_img "/></a>
+						</div>
+						<div class="erweima_bot ">
+							<a href=" " title=" "><span>手机扫描获取</span></a>
+						</div>
+					</div>
+				</ul>
+				<ul class="erweimadisplay4 ">
+					<li><a href=" " title=" "><img src="img/携程.png " alt=" "/></a></li>
+					<li><a href=" " title=" ">优酷</a></li>
+					<div class="erweima4 ">
+						<div class="erweima_top ">
+							<a href=" " title=" "><img src="img/二维码.png " alt=" " class="erweima_img "/></a>
+						</div>
+						<div class="erweima_bot ">
+							<a href=" " title=" "><span>手机扫描获取</span></a>
+						</div>
+					</div>
+				</ul>
+				<ul class="erweimadisplay5 ">
+					<li><a href=" " title=" "><img src="img/复玩.png "></a></li>
+					<li><a href=" " title=" ">腾讯</a></li>
+					<div class="erweima5 ">
+						<div class="erweima_top ">
+							<a href=" " title=" "><img src="img/二维码.png " alt=" " class="erweima_img "/></a>
+						</div>
+						<div class="erweima_bot ">
+							<a href=" " title=" "><span>手机扫描获取</span></a>
+						</div>
+					</div>
+				</ul>
+				<ul class="erweimadisplay6 ">
+					<li><a href=" " title=" "><img src="img/复玩.png "></a></li>
+					<li><a href=" " title=" ">亚马逊</a></li>
+					<div class="erweima6 ">
+						<div class="erweima_top ">
+							<a href=" " title=" "><img src="img/二维码.png " alt=" " class="erweima_img "/></a>
+						</div>
+						<div class="erweima_bot ">
+							<a href=" " title=" "><span>手机扫描获取</span></a>
+						</div>
+					</div>
+				</ul>
+				<ul class="erweimadisplay7 ">
+					<li><a href=" " title=" "><img src="img/复玩.png "></a></li>
+					<li><a href=" " title=" ">火狐主页</a></li>
+					<div class="erweima7 ">
+						<div class="erweima_top ">
+							<a href=" " title=" "><img src="img/二维码.png " alt=" " class="erweima_img "/></a>
+						</div>
+						<div class="erweima_bot ">
+							<a href=" " title=" "><span>手机扫描获取</span></a>
+						</div>
+					</div>
+				</ul>
+				<ul class="erweimadisplay8 ">
+					<li><a href=" " title=" "><img src="img/复玩.png "></a></li>
+					<li><a href=" " title=" ">共享饰品</a></li>
+					<div class="erweima8 ">
+						<div class="erweima_top ">
+							<a href=" " title=" "><img src="img/二维码.png " alt=" " class="erweima_img "/></a>
+						</div>
+						<div class="erweima_bot ">
+							<a href=" " title=" "><span>手机扫描获取</span></a>
+						</div>
+					</div>
+				</ul>
+				<ul class="erweimadisplay9 ">
+					<li><a href=" " title=" "><img src="img/携程.png " alt=" "/></a></li>
+					<li><a href=" " title=" ">携程旅游</a></li>
+					<div class="erweima9 ">
+						<div class="erweima_top ">
+							<a href=" " title=" "><img src="img/二维码.png " alt=" " class="erweima_img "/></a>
+						</div>
+						<div class="erweima_bot ">
+							<a href=" " title=" "><span>手机扫描获取</span></a>
+						</div>
+					</div>
+				</ul>
+				<ul class="erweimadisplay10 ">
+					<li><a href=" " title=" "><img src="img/携程.png " alt=" "/></a></li>
+					<li><a href=" " title=" ">360</a></li>
+					<div class="erweima10 ">
+						<div class="erweima_top ">
+							<a href=" " title=" "><img src="img/二维码.png " alt=" " class="erweima_img "/></a>
+						</div>
+						<div class="erweima_bot ">
+							<a href=" " title=" "><span>手机扫描获取</span></a>
+						</div>
+					</div>
+				</ul>
+				<ul class="erweimadisplay11 ">
+					<li><a href=" " title=" "><img src="img/携程.png " alt=" "/></a></li>
+					<li><a href=" " title=" ">去哪儿</a></li>
+					<div class="erweima11 ">
+						<div class="erweima_top ">
+							<a href=" " title=" "><img src="img/二维码.png " alt=" " class="erweima_img "/></a>
+						</div>
+						<div class="erweima_bot ">
+							<a href=" " title=" "><span>手机扫描获取</span></a>
+						</div>
+					</div>
+				</ul>
+				<ul class="erweimadisplay12 ">
+					<li><a href=" " title=" "><img src="img/携程.png " alt=" "/></a></li>
+					<li><a href=" " title=" ">途牛</a></li>
+					<div class="erweima12 ">
+						<div class="erweima_top ">
+							<a href=" " title=" "><img src="img/二维码.png " alt=" " class="erweima_img "/></a>
+						</div>
+						<div class="erweima_bot ">
+							<a href=" " title=" "><span>手机扫描获取</span></a>
+						</div>
+					</div>
+				</ul>
+				<ul>
+					<li><a href=" " title=" "><img src="img/提交.png "/></a></li>
+					<li><a href=" " title=" ">携程</a></li>
+				</ul>
+				</div>
+			</div>
+			<div class="shiwu "></div>
+			<div class="content_th clearfix pwidth " id="read">
+				<div class="content_th_left leftarea ">
+					<div class="content_nav ">
+					<ul class="fu ">
+						<li><a href=" " title=" " class="active">要闻</a></li>
+					</ul>
+					<ul>						
+						<li><a href=" " title=" ">国内</a></li>
+						<li><a href=" " title=" ">国际</a></li>
+						<li><a href=" " title=" ">社会</a></li>
+						<li><a href=" " title=" ">军事</a></li>
+						<li><a href=" " title=" ">娱乐</a></li>
+						<li><a href=" " title=" ">体育</a></li>
+						<li><a href=" " title=" ">汽车</a></li>
+						<li><a href=" " title=" ">科技</a></li>
+					</ul>
+					</div>	
+					<div class="ershi "></div>
+					<div class="lr ">
+						<div class="xiazuo leftarea mgl21 ">						
+							<a href=" " title="格斗狂人打赢咏春选手？ "><img src="img/格斗.png " alt=" " class="top_img "/></a>
+							<a href=" " title="格斗狂人打赢咏春选手？ "><p class="top_p ">格斗狂人打赢咏春选手？咏春师傅：估计徐晓东伤更重</p></a>
+						<div>
+							<a href=" " title="曝光闯红灯者信息引争议 "><img src="img/曝光.png " alt=" " class="bt_left_img "/></a>
+							<a href=" " title="浙大硕士弃读博改卖面包 "><img src="img/浙大.png " alt=" " class="bt_left_img2 "/></a>
+						</div>
+						<div>
+							<a href=" " title="曝光闯红灯者信息引争议 "><p class="bt_left_p ">曝光闯红灯者信息引争议</p></a>
+							<a href=" " title="浙大硕士弃读博改卖面包 "><p class="bt_left_p2 ">浙大硕士弃读博改卖面包</p></a>
+						</div>
+						<div class="danbai ">
+							<div class="leftarea ">
+								<a href=" " title="揭秘暴利“乳铁”蛋白 "><img src="img/蛋白质.png " alt=" " /></a>
+							</div>
+							<div class="bg2 rightarea ">
+								<a href=" " title="揭秘暴利“乳铁”蛋白 " class="hei "><p class="bg2_p1 ">揭秘暴利“乳铁”蛋白</p></a>
+								<a href=" " title="实际上是带有“乳铁”商标的乳清蛋白固体饮料... "><p class="bg2_p2 ">实际上是带有“乳铁”商标的乳清蛋白固体饮料...</p></a>
+							</div>
+						</div>
+						<div class="dashed_1 ">
+							<a href=" " title="新娘婚礼前为甩赘肉突击减肥三个月 结果悲剧了 " class="hei "><p class="tit ">新娘婚礼前为甩赘肉突击减肥三个月 结果悲剧了</p></a>
+							<a href=" " title=" "><p class="con ">检查结果发现 她的胃粘膜上有多处血点 确诊为胃出血</p></a>
+							<div class="dashed "></div>
+						</div>
+						<div class="dashed_1 ">
+							<a href=" " title="产权证在手车却遭过户：身份证真假肉眼辨别不了 " class="hei "><p class="tit ">产权证在手车却遭过户：身份证真假肉眼辨别不了</p></a>
+							<a href=" " title=" "><p class="con ">车管所回应身份证真假警察肉眼辨别不了...</p></a>
+							<div class="dashed "></div>
+						</div>
+						<div class="dashed_1 ">
+							<a href=" " title="20余公司“蹭”区块链热点推高股价被监管 " class="hei "><p class="tit ">20余公司“蹭”区块链热点推高股价被监管</p></a>
+							<a href=" " title=" "><p class="con ">近期一些上市公司通过公告和互动易发布涉及区块链概念的信...</p></a>
+						</div>
+					</div>
+						<div class="xiayou ">
+							<div class="xiayou_list ">							
+								<ul>
+									<li><img src="img/bp.png " alt=" "><a href=" " title="在人大闭幕会上 习近平作出了这些创新理论 " class="heibold "><span>在人大闭幕会上 习近平作出了这些创新理论</span></a></li>
+									<li><img src="img/bp.png " alt=" "><a href=" " title="好东西| 这不是一把伞，这是一个世界！ ">李克强在记者会上发话了 这十大好消息请查收</a></li>
+									<li><img src="img/bp.png " alt=" "><a href=" " title="网络热词| 杠精直男癌圣女婊到底啥意思 ">网络热词| 杠精直男癌圣女婊到底啥意思</a></li>
+									<li><img src="img/bp.png " alt=" "><a href=" " title="丢脸| 香奈儿砍掉百年老树，只为了这个秀场 ">丢脸| 香奈儿砍掉百年老树，只为了这个秀场</a></li>
+									<li><img src="img/bp.png " alt=" "><a href=" " title="丢脸| 香奈儿砍掉百年老树，只为了这个秀场 ">丢脸| 香奈儿砍掉百年老树，只为了这个秀场</a></li>
+									<li><img src="img/bp.png " alt=" "><a href=" " title="丢脸| 香奈儿砍掉百年老树，只为了这个秀场 ">丢脸| 香奈儿砍掉百年老树，只为了这个秀场</a></li>
+								</ul>	
+								<ul class="mar ">
+									<li><img src="img/bp.png " alt=" "><a href=" " title="在人大闭幕会上 习近平作出了这些创新理论 " class="heibold ">在人大闭幕会上 习近平作出了这些创新理论</a></li>
+									<li><img src="img/bp.png " alt=" "><a href=" " title="好东西| 这不是一把伞，这是一个世界！ ">李克强在记者会上发话了 这十大好消息请查收</a></li>
+									<li><img src="img/bp.png " alt=" "><a href=" " title="网络热词| 杠精直男癌圣女婊到底啥意思 ">网络热词| 杠精直男癌圣女婊到底啥意思</a></li>
+									<li><img src="img/bp.png " alt=" "><a href=" " title="丢脸| 香奈儿砍掉百年老树，只为了这个秀场 ">丢脸| 香奈儿砍掉百年老树，只为了这个秀场</a></li>
+									<li><img src="img/bp.png " alt=" "><a href=" " title="丢脸| 香奈儿砍掉百年老树，只为了这个秀场 ">丢脸| 香奈儿砍掉百年老树，只为了这个秀场</a></li>
+									<li><img src="img/bp.png " alt=" "><a href=" " title="丢脸| 香奈儿砍掉百年老树，只为了这个秀场 ">丢脸| 香奈儿砍掉百年老树，只为了这个秀场</a></li>
+								</ul>
+							</div>
+							<div class="note ">
+								<div class="leftarea ">
+									<a href=" " title="男子偷钱后留纸条求谅解 "><img src="img/你好.png " alt=" "  class="nihao "/></a>
+								</div>
+								<div class="bg2 rightarea ">
+									<a href=" " title="男子偷钱后留纸条求谅解 " class="hei "><p class="bg2_p1 ">男子偷钱后留纸条求谅解</p></a>
+									<a href=" " title="一男子偷了邻居的钱，结果良心上过不去... "><p class="bg2_p2 ">一男子偷了邻居的钱，结果良心上过不去...</p></a>
+								</div>
+							</div>
+							<div class="dashed_2 ">
+								<a href=" " title="新娘婚礼前为甩赘肉突击减肥三个月 结果悲剧了 " class="hei "><p class="tit ">新娘婚礼前为甩赘肉突击减肥三个月 结果悲剧了</p></a>
+								<a href=" " title=" "><p class="con ">检查结果发现 她的胃粘膜上有多处血点 确诊为胃出血</p></a>
+								<div class="dashed "></div>
+							</div>
+							<div class="dashed_2 ">
+								<a href=" " title="产权证在手车却遭过户：身份证真假肉眼辨别不了 " class="hei "><p class="tit ">产权证在手车却遭过户：身份证真假肉眼辨别不了</p></a>
+								<a href=" " title=" "><p class="con ">车管所回应身份证真假警察肉眼辨别不了...</p></a>
+								<div class="dashed "></div>
+							</div>
+							<div class="dashed_2 ">
+								<a href=" " title="20余公司“蹭”区块链热点推高股价被监管 " class="hei "><p class="tit ">20余公司“蹭”区块链热点推高股价被监管</p></a>
+								<a href=" " title=" "><p class="con ">近期一些上市公司通过公告和互动易发布涉及区块链概念的信...</p></a>
+							</div>
+						</div>	
+					</div>				
+				</div>
+				<div class="content_th_right ">
+					<div class="ershi "></div>
+					<div class="th_nav ">		
+						<ul class="book ">
+							<li class="Book"><a href="javascript:;" title="" class="tushu active">图书排行</a></li>
+						</ul>
+						<ul class="game ">						
+							<li class="Game"><a href="javascript:;" title="" class="youxi">游戏排行</a></li>
+							<li class="Novel"><a href="javascript:;" title="" class="ruanjian">软件排行</a></li>
+						</ul>
+					</div>
+					<div class="shiliu "></div>
+					<div class="bookrank">
+						<div class="rank_left ">
+							<span class="red ">1</span>				
+							<span class="red ">2</span>
+							<span class="red ">3</span>
+							<span class="black ">4</span>
+							<span class="black ">5</span>
+						</div>
+						<div class="rank_right ">
+							<a href=" " title="人类简史，从动物到上帝 ">人类简史，从动物到上帝..</a>						
+							<a href=" " title="未来简史 ">未来简史</a>
+							<a href=" " title="自在独行：贾平凹的独行世界 ">自在独行：贾平凹的独行世界</a>
+							<a href=" " title="解忧杂货店 ">解忧杂货店</a>
+							<a href=" " title="我们仨 ">我们仨</a>
+						</div>
+					</div>
+					<div class="gamerank">
+						<div class="rank_left ">
+							<span class="red ">1</span>				
+							<span class="red ">2</span>
+							<span class="red ">3</span>
+							<span class="black ">4</span>
+							<span class="black ">5</span>
+						</div>
+						<div class="rank_right ">
+							<a href=" " title="红色警戒 ">红色警戒</a>						
+							<a href=" " title="CD反恐精英 ">CD反恐精英</a>
+							<a href=" " title="绝地求生：刺激战场">绝地求生：刺激战场</a>
+							<a href=" " title="王者荣耀 ">王者荣耀</a>
+							<a href=" " title="QQ飞车 ">QQ飞车</a>
+						</div>
+					</div>
+					<div class="novelrank">
+						<div class="rank_left ">
+							<span class="red ">1</span>				
+							<span class="red ">2</span>
+							<span class="red ">3</span>
+							<span class="black ">4</span>
+							<span class="black ">5</span>
+						</div>
+						<div class="rank_right ">
+							<a href=" " title="计算机网络">计算机网络</a>						
+							<a href=" " title="数据结构 ">数据结构</a>
+							<a href=" " title="操作系统基础">操作系统基础</a>
+							<a href=" " title="线性代数 ">线性代数</a>
+							<a href=" " title="数据库应用系统 ">数据库应用系统</a>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix "></div>
+				<div class="content_fo"  id="look">
+					<div class="fo_nav ">														
+						<ul class="magic ">						
+							<li><a href=" " title=" ">奇闻</a></li>							
+						</ul>
+						<ul class="video ">
+							<li><a href=" " title=" ">娱乐</a></li>
+							<li><a href=" " title=" ">看见</a></li>
+							<li><a href=" " title=" " class="active ">视频</a></li>
+						</ul>
+						<ul class="tupian ">							
+							<li><a href=" " title=" " class=" active ">图片 ></a></li>
+						</ul>
+					</div>
+					<div class="ershi "></div>
+					<div class="fo_left leftarea ">
+						<a href=" " title="刘晓庆4婚都没能生孩子 哭诉真相惹人疼 "><img src="img/lxq.png " alt=" "/></a>
+						<div class="fo_left_bo ">
+							<a href=" "  title="刘晓庆4婚都没能生孩子 哭诉真相惹人疼 ">刘晓庆4婚都没能生孩子 哭诉真相惹人疼</a>
+						</div>
+					</div>
+					<div class="fo_right ">
+						<div class="shi "></div>
+						<div class="leftarea ">
+							<a href=" " title="刘涛隐藏多年的妈曝光竟是她？ "><img src="img/lt.png " alt=" "/></a>
+							<div class="fo_right_bo ">
+								<a href=" "  title="刘涛隐藏多年的妈曝光竟是她 ">刘涛隐藏多年的妈曝光竟是她</a>
+							</div>
+						</div>
+						<div class="leftarea ">
+							<a href=" " title="赵本山病恶化前期这话被称赞？ "><img src="img/zbs.png " alt=" "/></a>
+							<div class="fo_right_bo ">
+							<a href=" "  title="赵本山病恶化前期这话被称赞？ ">赵本山病恶化前期这话被称赞？</a>
+						</div>
+						</div>
+						<div class="leftarea ">
+							<a href=" " title="赵本山病恶化前期这话被称赞？ "><img src="img/zbs.png " alt=" "/></a>
+							<div class="fo_right_bo ">
+							<a href=" "  title="赵本山病恶化前期这话被称赞？ ">赵本山病恶化前期这话被称赞？</a>
+						</div>
+						</div>
+						<div class="leftarea ">
+							<a href=" " title="心酸！董卿曝光为何不做主持人 "><img src="img/dq.png " alt=" "/></a>
+							<div class="fo_right_bo ">
+							<a href=" "  title="心酸！董卿曝光为何不做主持人 ">心酸！董卿曝光为何不做主持人</a>
+						</div>
+						</div>
+						<div class="leftarea ">
+							<a href=" " title="刘晓庆4婚都没能生孩子 "><img src="img/lt.png " alt=" "/></a>
+							<div class="fo_right_bo ">
+							<a href=" "  title="刘晓庆4婚都没能生孩子 ">刘晓庆4婚都没能生孩子</a>
+						</div>
+						</div>
+						<div class="leftarea ">
+							<a href=" " title="刘晓庆4婚都没能生孩子 "><img src="img/lt.png " alt=" "/></a>
+							<div class="fo_right_bo ">
+							<a href=" "  title="刘晓庆4婚都没能生孩子 ">刘晓庆4婚都没能生孩子</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix shiwu cw "></div>
+				<div class="content_fi pwidth ">
+					<div class="div1 leftarea ">
+						<div class="div1_left leftarea ">
+							<a href=" " title="火狐社区 "><img src="img/fox.png " alt=" "/></a>
+						</div>
+						<div class="div1_right rightarea ">
+							<ul class="common ">
+								<li><a href=" " title="火狐社区 " class="bold ">火狐社区</a></li>
+								<li><a href=" " title="火狐快讯 ">火狐快讯</a></li>
+								<li><a href=" " title="校园大使 ">校园大使</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="div2 leftarea ">
+						<div class="div2_left leftarea ">
+							<a href=" " title="火狐社区 "><img src="img/卡片.png " alt=" "/></a>
+						</div>
+						<div class="div2_right rightarea ">
+							<ul class="common ">
+								<li><a href=" " title="火狐扩展 " class="bold ">火狐扩展</a></li>
+								<li><a href=" " title="标签页优化 ">标签页优化</a></li>
+								<li><a href=" " title="视频下载 ">视频下载</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="border "></div>
+					<div class="div3 leftarea ">
+						<div class="div3_left leftarea ">
+							<a href=" " title="火狐社区 "><img src="img/fox.png " alt=" "/></a>
+						</div>
+						<div class="div3_right rightarea ">
+							<ul class="common ">
+								<li><a href=" " title="火狐社区 " class="bold ">火狐社区</a></li>
+								<li><a href=" " title="火狐快讯 ">火狐快讯</a></li>
+								<li><a href=" " title="校园大使 ">校园大使</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="border "></div>
+					<div class="div4 leftarea ">
+						<div class="div4_left leftarea ">
+							<a href=" " title="火狐社区 "><img src="img/fox.png " alt=" "/></a>
+						</div>
+						<div class="div4_right rightarea ">
+							<ul class="common ">
+								<li><a href=" " title="火狐社区 " class="bold ">火狐社区</a></li>
+								<li><a href=" " title="火狐快讯 ">火狐快讯</a></li>
+								<li><a href=" " title="校园大使 ">校园大使</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="border "></div>
+					<div class="div5 ">
+						<div class="div5_left leftarea ">
+							<a href=" " title="火狐社区 "><img src="img/fox.png " alt=" "/></a>
+						</div>
+						<div class="div5_right rightarea ">
+							<ul class="common ">
+								<li><a href=" " title="火狐社区 " class="bold ">火狐社区</a></li>
+								<li><a href=" " title="火狐快讯 ">火狐快讯</a></li>
+								<li><a href=" " title="校园大使 ">校园大使</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="jiushi clearfix "></div>
+		</div>
+		<div class="footer clearfix " id="go">
+			<div class="footer_img leftarea ">
+				<a href=" " title="火狐官网 "><img src="img/firewfox.png "/></a>
+			</div>
+			<div class="footer_con">
+				<p class="footer_con_top">
+					<a href=" " title="火狐浏览器 ">火狐浏览器</a>
+					<span>|</span>
+					<a href=" " title="火狐中文网 ">火狐中文网</a>
+					<span>|</span>
+					<a href=" " title="意见反馈 ">意见反馈</a>
+					<span>|</span>
+					<a href=" " title="意见反馈 ">意见反馈</a>
+					<span>|</span>
+					<a href=" " title="常见问题 ">常见问题</a>
+					<span>|</span>
+					<a href=" " title="关于我们 ">关于我们</a>
+					<span>|</span>
+					<a href=" " title="联系我们 ">联系我们</a>
+				</p>
+				<div class="sanshi "></div>
+				<p>版权所有 ? 2017 Mozilla Firefox. 北京谋智火狐信息技术有限公司</p>
+				<p>京ICP备11011334号 </p>
+				<p><a href=" " title=" "><img src="img/公安.png "alt=" " class="gongan "/>京公网安1101012001811号</a></p>
+			</div>
+		</div>
+	</body>
+</html>
